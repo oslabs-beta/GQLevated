@@ -5,11 +5,11 @@ import React from 'react';
 
 function Layout({ children }) {
   return (
-    <div className={styles.container}>
-      <Nav className={styles.navbar} styles={styles.list} />
+    <>
+      <Nav />
       <main className={styles.main}>{children}</main>
-      <Footer styles={styles.list} />
-    </div>
+      <Footer />
+    </>
   );
 }
 

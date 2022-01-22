@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  padding: 0 2rem;
+  background-color: var(--primary-color);
+  box-shadow: rgba(0, 0, 0, 0.5);
+  list-style-type: none;
+  height: 3rem;
+  align-items: center;
+}
+
+.ul {
+  display: flex;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  /* width: 100%; */
+  color: var(--primary-text);
+}
+
+.navitem {
+  display: block;
+  border-bottom: 3px solid var(--secondary-color);
+}

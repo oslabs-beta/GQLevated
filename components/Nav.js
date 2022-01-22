@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
+import styles from '../styles/Nav.module.css';
 
-function Nav({ className, styles }) {
+function Nav() {
   return (
-    <div className={className}>
+    <div className={styles.navbar}>
       <nav>
-        <ul className={styles}>
-          <li>
+        <ul className={styles.ul}>
+          <li className={styles.navitem}>
             <Link href='/'>Home</Link>
           </li>
           <li>
