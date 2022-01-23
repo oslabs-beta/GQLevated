@@ -4,7 +4,7 @@
   background-color: var(--primary-color);
   box-shadow: rgba(0, 0, 0, 0.5);
   list-style-type: none;
-  height: 3rem;
+  height: 2.6rem;
   align-items: center;
 }
 
@@ -13,10 +13,23 @@
   /* flex-direction: row; */
   /* flex-wrap: wrap; */
   /* width: 100%; */
+  align-items: center;
+  /* height: 2rem; */
   color: var(--primary-text);
 }
 
-.navitem {
-  display: block;
+.current {
+  /* display: flex; */
+  /* height: 1.9rem; */
   border-bottom: 3px solid var(--secondary-color);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.listitem {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  padding: 0.5rem;
 }
