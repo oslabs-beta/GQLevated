@@ -1,0 +1,12 @@
+.codebox {
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
+    min-height: 80vh;
+    min-width: 58rem;
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #cbcdd0;
+}

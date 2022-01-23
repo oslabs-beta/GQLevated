@@ -1,6 +1,7 @@
 :root {
   --primary-color: #2f3c48;
   --secondary-color: #5c8f94;
+  --gradient-color: rgba(85, 182, 184, 0.845);
   --primary-text: #fff;
 }
 
