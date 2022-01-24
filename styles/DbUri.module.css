@@ -1,8 +1,8 @@
 .container{
     position: absolute;
-    top: 5rem;
-    left: 2rem;
-    min-height: 80vh;
+    top: 3rem;
+    left: 0.5rem;
+    min-height: 94vh;
     min-width: 20rem;
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
 
 .uriString{
     position: absolute;
-    bottom: 0rem;
+    bottom: 10rem;
     min-height: 38vh;
     min-width: 20rem;
     display: flex;
