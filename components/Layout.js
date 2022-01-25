@@ -8,7 +8,6 @@ function Layout({ children }) {
     <>
       <Nav />
       <main className={styles.main}>{children}</main>
-      <Footer />
     </>
   );
 }

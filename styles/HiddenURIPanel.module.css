@@ -1,0 +1,35 @@
+.panel {
+  min-height: 95vh;
+  width: 2rem;
+  /* box-shadow: 0 10px 10px var(--secondary-color); */
+  border-radius: 5px;
+  position: fixed;
+  left: 0;
+  z-index: 1000;
+  cursor: pointer;
+  transform: translateX(-0.5rem);
+}
+
+.transition-enter {
+  top: 0;
+  left: -10rem;
+  height: 95vh;
+}
+
+.transition-enter-active {
+  top: 0;
+  left: 0;
+  transition: all 2000ms;
+}
+
+.transition-exit {
+  top: 0;
+  left: 0;
+}
+
+.transition-exit-active {
+  top: 0;
+  left: -10rem;
+  height: 95vh;
+  transition: all 2000ms;
+}

@@ -3,13 +3,7 @@ import GitHubButton from 'react-github-btn';
 
 function Footer({ styles }) {
   return (
-    <footer
-      style={{
-        position: 'absolute',
-        bottom: '2rem',
-        left: '2rem',
-      }}
-    >
+    <footer>
       <ul>
         <li className={styles}>
           <GitHubButton
