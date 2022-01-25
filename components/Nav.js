@@ -4,9 +4,8 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Nav.module.css';
-import GitHubLogo from '../public/GitHub-Mark-Light-64px.png';
-import LinkedInLogo from '../public/linkedin.png';
 import GitHubStar from './GitHubStar';
+import GQLevated from './GQLevated.js';
 
 function Nav() {
   const [isHover, setIsHover] = useState(false);
@@ -80,6 +79,7 @@ function Nav() {
           </Link>
         </ul>
       </nav>
+      <GQLevated />
       <GitHubStar />
     </div>
   );
