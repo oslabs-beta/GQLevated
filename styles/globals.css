@@ -36,5 +36,6 @@ ul {
 }
 
 li {
-  margin: 0 1rem;
+  margin: 0 1 rem;
+  font-size: 1.25rem;
 }
