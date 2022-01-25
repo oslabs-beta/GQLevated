@@ -4,8 +4,9 @@
   background-color: var(--primary-color);
   box-shadow: rgba(0, 0, 0, 0.5);
   list-style-type: none;
-  height: 2.6rem;
+  height: 5.6rem;
   align-items: center;
+  justify-content: space-between;
 }
 
 .ul {
@@ -33,3 +34,5 @@
   cursor: pointer;
   padding: 0.5rem;
 }
+
+

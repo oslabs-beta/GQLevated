@@ -1,7 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Nav.module.css';
+import GitHubLogo from '../public/GitHub-Mark-Light-64px.png';
+import LinkedInLogo from '../public/linkedin.png';
+import GitHubStar from './GitHubStar';
+
 
 function Nav() {
   const [isHover, setIsHover] = useState(false);
@@ -66,22 +71,6 @@ function Nav() {
             </li>
           </Link>
 
-          <Link href='https://github.com/oslabs-beta/GQLevated'>
-            <li
-              className={styles.listitem}
-              onMouseEnter={async (e) => {
-                await setIsHover(false);
-                handleHover(e);
-              }}
-              onMouseLeave={async (e) => {
-                await setIsHover(true);
-                handleHover(e);
-              }}
-            >
-              Github
-            </li>
-          </Link>
-
           <Link href='/demo'>
             <li
               className={router.pathname == '/demo' ? styles.current : styles.listitem}
@@ -99,6 +88,7 @@ function Nav() {
           </Link>
         </ul>
       </nav>
+      <GitHubStar />
     </div>
   );
 }
