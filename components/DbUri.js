@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../styles/DbUri.module.css';
+import { Input, Spacer, Button, Loading } from '@nextui-org/react';
 
 const easing = [0.83, 0, 0.17, 1];
 
@@ -48,17 +49,19 @@ function DbUri({ hidePanel }) {
       <motion.div variants={fadeInRight} initial='initial' exit='exit' animate='initial' className={styles.container}>
         <div className={styles.uriString}>
           <h2>Elevated your project with seamless integration</h2>
-          <br></br>
-          <input className={styles.dbInput} placeholder='postgres://' />
-          <br></br>
-          <button className={styles.button} onClick={() => hidePanel()}>
+          <Spacer y={1.5} />
+          <Input clearable bordered width='20rem' labelPlaceholder='PostgreSQL URI' initialValue='' />
+          <Spacer y={1.5} />
+          <Button auto clickable={true} color='gradient' rounded='false' size='sm' css={{ px: '$14' }} onClick={() => hidePanel()}>
             Submit
-          </button>
+          </Button>
         </div>
         <div className={styles.sampledb}>
           <h2>See how it works with our sample database </h2>
-          <br></br>
-          <button className={styles.button}>Sample Database</button>
+          <Spacer y={1.5} />
+          <Button auto clickable={true} color='default' rounded='false' size='sm' css={{ px: '$10' }} onClick={() => hidePanel()}>
+            Sample Database
+          </Button>
         </div>
       </motion.div>
     </AnimatePresence>

@@ -4,13 +4,8 @@
 }
 
 .main {
-  min-height: 80vh;
-  padding: 2rem 2.5rem;
-  /* flex: 1;
-  display: flex; */
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+  min-height: 90vh;
+  padding: 1rem 3rem;
 }
 
 .footer {
