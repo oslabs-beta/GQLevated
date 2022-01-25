@@ -47,14 +47,10 @@ function LearnFeatures() {
       <br></br>
       <h1>What can GQLevated do for you?</h1>
       <br></br>
-      <p>Our Hosted Web App developer tool will supply users with customized production-ready GraphQL types, resolvers, mutations and queries.  
+      <p>Our Hosted Web App developer tool will supply users with customized production-ready GraphQL types, resolvers, mutations and queries. Allowing developers to spend more time solving problems and less time tediously writing GraphQL code. Thus ELEVATING the project as a whole. 
       <br></br>
       <br></br>
-      Allowing developers to spend more time solving problems and less time tediously writing GraphQL code. Thus ELEVATING the project as a whole. 
-      <br></br>
-      <br></br>
-      And free to use for everyone! 
-      No need to create an account.
+      And free to use for everyone! No need to create an account.
       </p>
     </div>
     <div className='allFeatures'>{introFeatures}</div>   
