@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from '../styles/Learn.module.css'
-import Features from './Features'
+import styles from '../styles/Learn.module.css';
+import Features from './Features';
+
 
 function LearnFeatures() {
   const features = [
@@ -53,7 +54,7 @@ function LearnFeatures() {
       And free to use for everyone! No need to create an account.
       </p>
     </div>
-    <div className='allFeatures'>{introFeatures}</div>   
+    <div className={styles.allFeatures}>{introFeatures}</div>   
   </div>
   );
 }

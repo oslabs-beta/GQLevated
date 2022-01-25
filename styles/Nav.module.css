@@ -4,7 +4,7 @@
   background-color: var(--primary-color);
   box-shadow: rgba(0, 0, 0, 0.5);
   list-style-type: none;
-  height: 5.6rem;
+  height: 7rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -24,6 +24,7 @@
   /* height: 1.9rem; */
   border-bottom: 3px solid var(--secondary-color);
   cursor: pointer;
+  font-size: 1.75rem;
   padding: 0.5rem;
 }
 
@@ -32,6 +33,7 @@
   align-items: center;
   border-bottom: 3px solid transparent;
   cursor: pointer;
+  font-size: 1.75rem;
   padding: 0.5rem;
 }
 
