@@ -1,22 +1,23 @@
 .container {
   min-height: 95vh;
   /* min-width: 20rem; */
+  padding: 0.5rem;
   width: min-content;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  align-items: center;
+  align-content: flex-start;
+  /* align-items: flex-start; */
   justify-content: center;
-  /* border: 1px solid black;    */
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px #cbcdd0;
+  margin-right: 2rem;
+  color: var(--primary-text);
+
+  /* box-shadow: 0px 0px 10px #cbcdd0; */
 }
 
 .sampledb {
   /* position: absolute;
   top: 0rem; */
   min-height: 38vh;
-  min-width: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;

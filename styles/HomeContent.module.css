@@ -1,10 +1,11 @@
 .homeContent {
-    display: flex;
-    flex-direction: column;
-    /* align-content: space-between; */
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: var(--primary-text);
-    color: var(--primary-color);
-  }
+  display: flex;
+  flex-direction: column;
+  /* align-content: space-between; */
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--dark-theme);
+  color: var(--primary-color);
+}

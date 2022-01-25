@@ -4,7 +4,7 @@
   background-color: var(--primary-color);
   box-shadow: rgba(0, 0, 0, 0.5);
   list-style-type: none;
-  height: 7rem;
+  height: 5rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -16,7 +16,7 @@
   /* width: 100%; */
   align-items: center;
   /* height: 2rem; */
-  color: var(--primary-text);
+  color: var(--dark-text);
 }
 
 .current {
@@ -36,5 +36,3 @@
   font-size: 1.75rem;
   padding: 0.5rem;
 }
-
-

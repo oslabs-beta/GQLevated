@@ -19,7 +19,7 @@ function Nav() {
     } else {
       e.target.style.borderBottom = '';
       e.target.style.backgroundColor = 'var(--primary-color)';
-      e.target.style.color = 'var(--primary-text)';
+      e.target.style.color = 'var(--dark-text)';
     }
   };
 
@@ -28,8 +28,8 @@ function Nav() {
       <nav>
         <ul className={styles.ul}>
           <Link href='/'>
-            <motion.li
-              whileHover={{ position: 'relateve', zIndex: 1, scale: 1.2, transition: { duration: 0.2 } }}
+            <li
+              // whileHover={{ position: 'relateve', zIndex: 1, scale: 1.2, transition: { duration: 0.2 } }}
               className={router.pathname == '/' ? styles.current : styles.listitem}
               onMouseEnter={async (e) => {
                 await setIsHover(false);
@@ -41,12 +41,12 @@ function Nav() {
               }}
             >
               Home
-            </motion.li>
+            </li>
           </Link>
 
           <Link href='/about'>
-            <motion.li
-              whileHover={{ position: 'relateve', zIndex: 1, scale: 1.2, transition: { duration: 0.2 } }}
+            <li
+              // whileHover={{ position: 'relateve', zIndex: 1, scale: 1.2, transition: { duration: 0.2 } }}
               className={router.pathname == '/about' ? styles.current : styles.listitem}
               onMouseEnter={async (e) => {
                 await setIsHover(false);
@@ -58,12 +58,12 @@ function Nav() {
               }}
             >
               About
-            </motion.li>
+            </li>
           </Link>
 
           <Link href='/demo'>
-            <motion.li
-              whileHover={{ position: 'relateve', zIndex: 1, scale: 1.2, transition: { duration: 0.2 } }}
+            <li
+              // whileHover={{ position: 'relateve', zIndex: 1, scale: 1.2, transition: { duration: 0.2 } }}
               className={router.pathname == '/demo' ? styles.current : styles.listitem}
               onMouseEnter={async (e) => {
                 await setIsHover(false);
@@ -75,7 +75,7 @@ function Nav() {
               }}
             >
               Demo
-            </motion.li>
+            </li>
           </Link>
         </ul>
       </nav>
