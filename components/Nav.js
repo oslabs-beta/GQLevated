@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Nav.module.css';
-import Footer from '../components/Footer';
+import GitHubLogo from '../public/GitHub-Mark-Light-64px.png';
+import LinkedInLogo from '../public/linkedin.png';
+import GitHubStar from './GitHubStar';
 
 function Nav() {
   const [isHover, setIsHover] = useState(false);
@@ -59,23 +62,6 @@ function Nav() {
             </motion.li>
           </Link>
 
-          <Link href='https://github.com/oslabs-beta/GQLevated'>
-            <motion.li
-              whileHover={{ position: 'relateve', zIndex: 1, scale: 1.2, transition: { duration: 0.2 } }}
-              className={styles.listitem}
-              onMouseEnter={async (e) => {
-                await setIsHover(false);
-                handleHover(e);
-              }}
-              onMouseLeave={async (e) => {
-                await setIsHover(true);
-                handleHover(e);
-              }}
-            >
-              Github
-            </motion.li>
-          </Link>
-
           <Link href='/demo'>
             <motion.li
               whileHover={{ position: 'relateve', zIndex: 1, scale: 1.2, transition: { duration: 0.2 } }}
@@ -94,7 +80,7 @@ function Nav() {
           </Link>
         </ul>
       </nav>
-      <Footer />
+      <GitHubStar />
     </div>
   );
 }

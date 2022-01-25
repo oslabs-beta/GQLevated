@@ -1,5 +1,5 @@
 import Nav from '../components/Nav';
-import Footer from '../components/Footer';
+import Footer from './GitHubStar';
 import styles from '../styles/Layout.module.css';
 import React from 'react';
 
