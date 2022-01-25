@@ -1,41 +1,35 @@
 .codebox {
-    position: absolute;
-    top: 3rem;
-    right: 0.5rem;
-    min-height: 94vh;
-    min-width: 150vh;
-    max-width: 75%;
-    margin: auto;
-    display: flex;
-    align-content: flex-start;
-    justify-content: flex-start;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px #cbcdd0;
-    text-align: center;
-    /* background-color: var(--primary-color); */
-    /* color: var(--primary-text); */
+  min-height: 95vh;
+  /* min-width: 150vh; */
+  width: 100%;
+  /* max-width: 75%; */
+  /* margin: auto; */
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #cbcdd0;
+  text-align: center;
+  /* background-color: var(--primary-color); */
+  /* color: var(--primary-text); */
 }
-
 
 .dbschema {
-    top: 10rem;
-    float: left;
-    width: 33.3%;
-    border-radius: 10px;
-    overflow: auto;
-    
+  top: 10rem;
+  float: left;
+  width: 33.3%;
+  border-radius: 10px;
+  overflow: auto;
 }
 .gqldata {
-    float: left;
-    width: 33.3%;
-    border-left:1px solid #e8ebf0;
-    border-right:1px solid #e8ebf0;
-    overflow: auto;
-       
+  float: left;
+  width: 33.3%;
+  border-left: 1px solid #e8ebf0;
+  border-right: 1px solid #e8ebf0;
+  overflow: auto;
 }
 .client {
-    float: right;
-    width: 33.3%;
-    border-radius: 10px;
-   
+  float: right;
+  width: 33.3%;
+  border-radius: 10px;
 }
