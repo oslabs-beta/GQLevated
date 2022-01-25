@@ -9,6 +9,7 @@
   /* align-items: flex-start; */
   justify-content: center;
   margin-right: 2rem;
+  color: var(--primary-text);
 
   /* box-shadow: 0px 0px 10px #cbcdd0; */
 }

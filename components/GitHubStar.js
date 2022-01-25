@@ -2,15 +2,21 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/GitHubStar.module.css';
-import LinkedInLogo from '../public/linkedin.png';
-import GitHubLogo from '../public/GitHub-Mark-Light-64px.png';
+import LinkedInLogo from '../public/Linkedin-logo-on-transparent-Background-PNG-.png';
+import GitHubLogo from '../public/GitHub-Mark-64px.png';
 import GitHubButton from 'react-github-btn';
+import GraphqlLogo from '../public/graphql2.png';
 
 
 function GitHubStar() {
   return (
     <footer>
       <ul className={styles.ul}>
+      <Link href='https://graphql.org/'>
+        <li className={styles.listgqllogo}>
+        <Image src={GraphqlLogo} width={50} height={50} alt="logo-gif" />
+        </li>
+      </Link>
       <Link href='https://www.linkedin.com/company/gqlevated'>
         <li className={styles.listitem}>
         <Image src={LinkedInLogo} width={40} height={40} alt="logo-gif" />

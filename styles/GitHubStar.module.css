@@ -16,3 +16,12 @@ cursor: pointer;
 margin-top: 1.1rem;
 padding: 0.5rem;
 }
+
+.listgqllogo {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  margin-top: 1.7rem;
+  padding: 0.5rem;
+  }

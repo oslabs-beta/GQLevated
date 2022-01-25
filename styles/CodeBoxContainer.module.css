@@ -11,7 +11,7 @@
   box-shadow: 0px 0px 10px #cbcdd0;
   text-align: center;
   /* background-color: var(--primary-color); */
-  /* color: var(--primary-text); */
+  color: var(--primary-text);
 }
 
 .dbschema {

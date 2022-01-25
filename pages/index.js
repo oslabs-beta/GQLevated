@@ -4,7 +4,6 @@ import Nav from '../components/Nav';
 import styles from '../styles/HomeContent.module.css';
 import Hero from '../components/Hero';
 import LearnFeatures from '../components/LearnFeatures'
-import Team from '../components/Team'
 
 export default function Home() {
   return (

@@ -12,16 +12,13 @@ import LinkedInLogo from '../public/Linkedin-logo-on-transparent-Background-PNG-
 function Team() {
   return (
     <div className={styles.team} id='team'>
-      <Spacer />
-      <Spacer />
-      <Spacer />
+      <Spacer y={5}/>
       <h1>Meet the Team</h1>
-      <Spacer />
-      <Spacer />
+      <Spacer y={4} />
       <Grid.Container gap={5} justify='center'>
         <Grid justify='center'>
-          <Card css={{ w: '100%' }}>
-            <Card.Header>
+          <Card css={{ w: '100%', border: '$space$1 solid #a359d8'}} bordered shadow={true}>
+            <Card.Header >
               <Text b size={25}>
                 John Alicastro
               </Text>
@@ -44,7 +41,7 @@ function Team() {
           </Card>
         </Grid>
         <Grid justify='center'>
-          <Card css={{ w: '100%' }}>
+          <Card css={{ w: '100%', border: '$space$1 solid #a359d8'}} bordered shadow={true}>
             <Card.Header>
               <Text b size={25}>
                 Johnson Che
@@ -68,7 +65,7 @@ function Team() {
           </Card>
         </Grid>
         <Grid justify='center'>
-          <Card css={{ w: '100%' }}>
+          <Card css={{ w: '100%', border: '$space$1 solid #a359d8'}} bordered shadow={true}>
             <Card.Header>
               <Text b size={25}>
                 Nicholas Gonzalez
@@ -92,7 +89,7 @@ function Team() {
           </Card>
         </Grid>
         <Grid justify='center'>
-          <Card css={{ w: '100%' }}>
+         <Card css={{ w: '100%', border: '$space$1 solid #a359d8'}} bordered shadow={true}>
             <Card.Header>
               <Text b size={25}>
                 Quyen Calixto
