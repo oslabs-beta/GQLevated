@@ -5,7 +5,7 @@ function CodeBoxContainer() {
   return (
     <div className={styles.codebox}>
       <div className={styles.gqldata}>
-        <h3> Types, Resolvers, and Mutations </h3>
+        <h3> GraphQL Types, Root Queries, & Mutations </h3>
       </div>
       <div className={styles.client}>
         <h3> Client Queries & Mutations</h3>

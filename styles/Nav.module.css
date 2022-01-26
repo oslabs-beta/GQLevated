@@ -4,6 +4,7 @@
   background-color: var(--primary-color);
   box-shadow: rgba(0, 0, 0, 0.5);
   list-style-type: none;
+  cursor: pointer;
   height: 5rem;
   align-items: center;
   justify-content: space-between;
@@ -35,4 +36,8 @@
   cursor: pointer;
   font-size: 1.75rem;
   padding: 0.5rem;
+}
+
+.gql {
+  cursor: pointer;
 }
