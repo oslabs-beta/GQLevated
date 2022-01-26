@@ -45,10 +45,19 @@ function DbUri({ hidePanel }) {
         body: JSON.stringify({ link: encryptedURL }),
       })
         .then((res) => res.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+          console.log(data);
+          if (data.err) {
+            setIsError(true);
+            setErrorMsg(data.err);
+            console.log(errorMsg);
+          } else {
+
+          }
+        })
         .catch((err) => {
-          setErrorMsg(err);
           setIsError(true);
+          setErrorMsg(err);
         });
     }
   };
@@ -59,18 +68,19 @@ function DbUri({ hidePanel }) {
         <div className={styles.uriString}>
           <h2>Elevate your project with seamless integration</h2>
           <Spacer y={1.5} />
-          {isError && <span>{errorMsg.err}</span>}
           <Input
-            clearable
-            bordered
-            width='20rem'
-            labelPlaceholder='PostgreSQL URI'
-            initialValue=''
-            ref={uriField}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') handleClick(e);
-            }}
+          clearable
+          bordered
+          width='20rem'
+          labelPlaceholder='PostgreSQL URI'
+          initialValue=''
+          ref={uriField}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleClick(e);
+          }}
           />
+          <Spacer y={1.5} />
+          {isError ? <span className={styles.error}>{errorMsg}</span>: null}
           <Spacer y={1.5} />
           <Button auto clickable={true} color='gradient' rounded='false' size='sm' css={{ px: '$14' }} onClick={(e) => handleClick(e)}>
             Submit
