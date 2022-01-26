@@ -64,7 +64,7 @@ Controller.convertToGQLServerCode = (req, res, next) => {
     return next();
   } catch (error) {
     const errObj = {
-      log: `Error caught in server middleware @ parseGraphqlServer: ${error}`,
+      log: `Error in server middleware @ parseGraphqlServer: ${error}`,
       status: 400,
       message: {
         err: 'Unable to parse Graphql Server Code',
