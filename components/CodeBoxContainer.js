@@ -3,21 +3,15 @@ import styles from '../styles/CodeBoxContainer.module.css';
 
 function CodeBoxContainer() {
   return (
-  <div className={styles.codebox}>
-    <div className={styles.dbschema}>
-        <h3> Schema </h3>
-    </div>
-    <div className={styles.gqldata}>
+    <div className={styles.codebox}>
+      <div className={styles.gqldata}>
         <h3> Types, Resolvers, and Mutations </h3>
-    </div>
-    <div className={styles.client}>
+      </div>
+      <div className={styles.client}>
         <h3> Client Queries & Mutations</h3>
+      </div>
     </div>
-  </div>
   );
 }
 
 export default CodeBoxContainer;
-
-
-

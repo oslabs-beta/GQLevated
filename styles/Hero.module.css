@@ -14,7 +14,7 @@
 
 .hero button {
   font-size: 1rem;
-  background-image: linear-gradient(to right, var(--secondary-color), var(--gradient-color));
+  background-image: linear-gradient(45deg, var(--secondary-color), var(--gradient-color));
   color: var(--primary-color);
   width: 10rem;
   height: 3rem;

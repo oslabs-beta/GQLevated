@@ -6,19 +6,19 @@ import JC from '../public/JC.png';
 import JA from '../public/JA.png';
 import NG from '../public/NG.png';
 import QC from '../public/QC.png';
-import GitHubLogo from '../public/GitHub-Mark-64px.png';
+import GitHubLogo from '../public/GitHub-Mark-Light-64px.png';
 import LinkedInLogo from '../public/Linkedin-logo-on-transparent-Background-PNG-.png';
 
 function Team() {
   return (
     <div className={styles.team} id='team'>
-      <Spacer y={5}/>
+      <Spacer y={5} />
       <h1>Meet the Team</h1>
       <Spacer y={4} />
       <Grid.Container gap={5} justify='center'>
         <Grid justify='center'>
-          <Card css={{ w: '100%', border: '$space$1 solid #a359d8'}} bordered shadow={true}>
-            <Card.Header >
+          <Card css={{ w: '100%', border: '$space$1 solid #a359d8' }} bordered shadow={true}>
+            <Card.Header>
               <Text b size={25}>
                 John Alicastro
               </Text>
@@ -31,7 +31,7 @@ function Team() {
             <Card.Footer>
               <Row justify='space-around'>
                 <Link href='https://github.com/JohnAlicastro'>
-                  <Image src={GitHubLogo} width={40} height={40} alt='logo-gif' />
+                  <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt='logo-gif' />
                 </Link>
                 <Link href='https://www.linkedin.com/in/john-alicastro-482032187'>
                   <Image src={LinkedInLogo} width={40} height={40} alt='logo-gif' />
@@ -41,7 +41,7 @@ function Team() {
           </Card>
         </Grid>
         <Grid justify='center'>
-          <Card css={{ w: '100%', border: '$space$1 solid #a359d8'}} bordered shadow={true}>
+          <Card css={{ w: '100%', border: '$space$1 solid #a359d8' }} bordered shadow={true}>
             <Card.Header>
               <Text b size={25}>
                 Johnson Che
@@ -55,7 +55,7 @@ function Team() {
             <Card.Footer>
               <Row justify='space-around'>
                 <Link href='https://github.com/JohnsonChe'>
-                  <Image src={GitHubLogo} width={40} height={40} alt='logo-gif' />
+                  <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt='logo-gif' />
                 </Link>
                 <Link href='https://www.linkedin.com/in/JohnsonChe/'>
                   <Image src={LinkedInLogo} width={40} height={40} alt='logo-gif' />
@@ -65,7 +65,7 @@ function Team() {
           </Card>
         </Grid>
         <Grid justify='center'>
-          <Card css={{ w: '100%', border: '$space$1 solid #a359d8'}} bordered shadow={true}>
+          <Card css={{ w: '100%', border: '$space$1 solid #a359d8' }} bordered shadow={true}>
             <Card.Header>
               <Text b size={25}>
                 Nicholas Gonzalez
@@ -79,7 +79,7 @@ function Team() {
             <Card.Footer>
               <Row justify='space-around'>
                 <Link href='https://github.com/Nikootz'>
-                  <Image src={GitHubLogo} width={40} height={40} alt='logo-gif' />
+                  <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt='logo-gif' />
                 </Link>
                 <Link href='https://www.linkedin.com/in/nicholas-gonzalez-036b1751/'>
                   <Image src={LinkedInLogo} width={40} height={40} alt='logo-gif' />
@@ -89,7 +89,7 @@ function Team() {
           </Card>
         </Grid>
         <Grid justify='center'>
-         <Card css={{ w: '100%', border: '$space$1 solid #a359d8'}} bordered shadow={true}>
+          <Card css={{ w: '100%', border: '$space$1 solid #a359d8' }} bordered shadow={true}>
             <Card.Header>
               <Text b size={25}>
                 Quyen Calixto
@@ -103,7 +103,7 @@ function Team() {
             <Card.Footer>
               <Row justify='space-around'>
                 <Link href='https://github.com/QtieCoder'>
-                  <Image src={GitHubLogo} width={40} height={40} alt='logo-gif' />
+                  <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt='logo-gif' />
                 </Link>
                 <Link href='https://www.linkedin.com/in/quyencalixto/'>
                   <Image src={LinkedInLogo} width={40} height={40} alt='logo-gif' />

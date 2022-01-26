@@ -7,11 +7,14 @@ const theme = createTheme({
   theme: {
     colors: {
       // brand colors
-      background: '#1d1d1d',
-      text: '#fff',
+      // background: '#1d1d1d',
+      background: '#121212',
+      text: 'hsla(0, 100%, 100%, 0.87)',
+      selection: '#fff',
       gradient: 'linear-gradient(to right, #a359d8, rgba(21, 5, 194, 0.845)',
+
       // you can also create your own color
-      myDarkColor: '#ff4ecd',
+      myDarkColor: '#fffff',
       // ...  more colors
     },
     space: {},
