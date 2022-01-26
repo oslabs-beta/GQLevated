@@ -1,0 +1,27 @@
+.ul {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* width: 100%; */
+    align-items: center;
+    /* height: 2rem; */
+    color: var(--primary-text);
+  }
+
+.listitem {
+display: flex;
+align-items: center;
+border-bottom: 3px solid transparent;
+cursor: pointer;
+margin-top: 1.1rem;
+padding: 0.5rem;
+}
+
+.listgqllogo {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  margin-top: 1.7rem;
+  padding: 0.5rem;
+  }

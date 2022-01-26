@@ -1,0 +1,10 @@
+.panel {
+  min-height: 95vh;
+  width: 2rem;
+  /* box-shadow: 0 10px 10px var(--secondary-color); */
+  position: fixed;
+  left: 0;
+  z-index: 1000;
+  cursor: pointer;
+  transform: translateX(-0.5rem);
+}

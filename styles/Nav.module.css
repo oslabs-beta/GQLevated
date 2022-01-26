@@ -4,8 +4,9 @@
   background-color: var(--primary-color);
   box-shadow: rgba(0, 0, 0, 0.5);
   list-style-type: none;
-  height: 2.6rem;
+  height: 5rem;
   align-items: center;
+  justify-content: space-between;
 }
 
 .ul {
@@ -15,7 +16,7 @@
   /* width: 100%; */
   align-items: center;
   /* height: 2rem; */
-  color: var(--primary-text);
+  color: var(--dark-text);
 }
 
 .current {
@@ -23,6 +24,7 @@
   /* height: 1.9rem; */
   border-bottom: 3px solid var(--secondary-color);
   cursor: pointer;
+  font-size: 1.75rem;
   padding: 0.5rem;
 }
 
@@ -31,5 +33,6 @@
   align-items: center;
   border-bottom: 3px solid transparent;
   cursor: pointer;
+  font-size: 1.75rem;
   padding: 0.5rem;
 }

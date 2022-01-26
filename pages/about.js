@@ -1,10 +1,11 @@
 import React from 'react';
 import Nav from '../components/Nav';
+import Team from '../components/Team';
 
 function About() {
   return (
     <div>
-      <h1>This is about page</h1>
+      <Team />
     </div>
   );
 }

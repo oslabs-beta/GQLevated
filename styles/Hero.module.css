@@ -1,5 +1,24 @@
 .hero {
   display: flex;
-  align-content: flex-start;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  height: 85vh;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: 7rem;
+}
+
+.hero button {
+  font-size: 1rem;
+  background-image: linear-gradient(to right, var(--secondary-color), var(--gradient-color));
+  color: var(--primary-color);
+  width: 10rem;
+  height: 3rem;
+  transition: left 0.5s ease-in-out;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #aaa9a9;
 }
