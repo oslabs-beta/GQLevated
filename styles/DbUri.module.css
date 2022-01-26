@@ -1,5 +1,6 @@
 .container {
-  min-height: 95vh;
+  /* min-height: 95vh; */
+  height: 85vh;
   /* min-width: 20rem; */
   padding: 0.5rem;
   width: min-content;

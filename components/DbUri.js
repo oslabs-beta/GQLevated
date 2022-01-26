@@ -48,7 +48,7 @@ function DbUri({ hidePanel }) {
     <AnimatePresence exitBeforeEnter>
       <motion.div variants={fadeInRight} initial='initial' exit='exit' animate='initial' className={styles.container}>
         <div className={styles.uriString}>
-          <h2>Elevated your project with seamless integration</h2>
+          <h2>Elevate your project with seamless integration</h2>
           <Spacer y={1.5} />
           <Input clearable bordered width='20rem' labelPlaceholder='PostgreSQL URI' initialValue='' />
           <Spacer y={1.5} />
