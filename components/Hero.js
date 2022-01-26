@@ -27,12 +27,11 @@ function Hero() {
       <motion.div variants={rotate} animate='initial'>
         <Image src={GQLLogo} width={300} height={300} alt='logo-gif' />
       </motion.div>
-
+      <Spacer y={4} />
       <h1>GQLevated</h1>
-      <Spacer y={1.5} />
+      <Spacer y={.5} />
       <h2>Elevate your projects with seamless GraphQL integration</h2>
-      <br></br>
-      <br></br>
+      <Spacer y={3} />
       <Link href='/#learn'>
         <button className='hvr-wobble-vertical'> Learn More </button>
       </Link>

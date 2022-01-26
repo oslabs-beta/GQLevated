@@ -18,10 +18,15 @@ padding: 0.5rem;
 }
 
 .listgqllogo {
-  display: flex;
-  align-items: center;
-  border-bottom: 3px solid transparent;
-  cursor: pointer;
-  margin-top: 1.7rem;
-  padding: 0.5rem;
-  }
+display: flex;
+align-items: center;
+border-bottom: 3px solid transparent;
+cursor: pointer;
+margin-top: 1.7rem;
+padding: 0.5rem;
+}
+
+.scaleDown {
+  transform: scale(0.9);
+}
+

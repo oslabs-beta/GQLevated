@@ -24,7 +24,7 @@ function GitHubStar() {
       </Link>
       <Link href='https://github.com/oslabs-beta/GQLevated'> 
         <li className={styles.listitem}>
-        <Image src={GitHubLogo} width={40} height={40} alt="logo-gif" />
+        <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt="logo-gif" />
         </li>
       </Link>
         <li className={styles.listitem}>
