@@ -1,13 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/Learn.module.css'
-import DbInput from '../public/UISample.jpg'
-import GQLCode from '../public/UISample.jpg';
-import ExportCode from '../public/UISample.jpg';
-import Visualize from '../public/UISample.jpg';
+import DbInput from '../public/home1.png'
+import GQLCode from '../public/home2.gif';
+import ExportCode from '../public/home2.gif';
+import Visualize from '../public/home1.png';
 
 
-function Features({index, title, description, gif}) {
+function Features({index, title, description}) {
     if (index === 0) {
         return (
           <div className={styles.features}>
