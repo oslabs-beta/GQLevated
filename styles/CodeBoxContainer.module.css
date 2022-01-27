@@ -2,7 +2,8 @@
   /* min-height: 95vh; */
   height: 85vh;
   /* min-width: 150vh; */
-  width: 100%;
+  width: 100vw;
+  min-width: 75vw;
   /* max-width: 75%; */
   /* margin: auto; */
   display: flex;
@@ -24,19 +25,23 @@
   /* border-left: 1px solid #e8ebf0;
   border-right: 1px solid #e8ebf0; */
   overflow: auto;
+  padding: 1rem;
 }
 .client {
   /* position: relative; */
   /* float: right; */
   width: 100%;
-  height: 50%;
+  height: 60%;
   border-radius: 10px;
-  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  overflow: scroll;
+  padding: 1rem;
 }
 
 .clientWrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 34%;
+  width: 50%;
 }

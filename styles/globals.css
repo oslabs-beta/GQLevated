@@ -50,6 +50,11 @@ li {
   font-size: 1.25rem;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 /* Button On Hover underline */
 
 .hover {

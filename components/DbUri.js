@@ -28,11 +28,8 @@ const fadeInRight = {
   },
 };
 
-function DbUri({ hidePanel, fetchData, setShowDemo }) {
+function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsError }) {
   const uriField = useRef();
-  //move these states to demo.js
-  const [errorMsg, setErrorMsg] = useState('');
-  const [isError, setIsError] = useState(false);
 
   const handleClick = (e) => {
     const URILink = uriField.current.value;
@@ -50,7 +47,6 @@ function DbUri({ hidePanel, fetchData, setShowDemo }) {
         <div className={styles.uriString}>
           <h2>Elevate your project with seamless integration</h2>
           <Spacer y={1.5} />
-          {isError && <span>{errorMsg.err}</span>}
           <Input
             clearable
             bordered
@@ -63,6 +59,8 @@ function DbUri({ hidePanel, fetchData, setShowDemo }) {
             }}
           />
           <Spacer y={1.5} />
+          {isError ? <span className={styles.error}>{errorMsg}</span> : null}
+          <Spacer y={1.5} />
           <Button
             auto
             clickable={true}
@@ -73,6 +71,7 @@ function DbUri({ hidePanel, fetchData, setShowDemo }) {
             onClick={(e) => {
               handleClick(e);
               setShowDemo(false);
+              setIsError(false);
             }}
           >
             Submit

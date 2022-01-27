@@ -8,22 +8,18 @@ function LearnFeatures() {
     [
       'Import your PostgreSQL database',
       'Users will be able to enter their PostgreSQL connection string into a text field or use our sample database to explore GQLevated.',
-      '../assets/UISample.jpg',
-    ],
+     ],
     [
       'GraphQL Code',
       'Automatically generate GraphQL types, resolvers, mutations and client queries to inject into your own application.',
-      '../assets/UISample.jpg',
     ],
     [
       'Export your GraphQL Code',
       'Users will have the option to either copy and paste the displayed code or export the code as individual files.',
-      '../assets/UISample.jpg',
     ],
     [
       'Visualize your GraphQL Schema',
       'Users will be able to visualize and interact their database relationships.',
-      '../assets/UISample.jpg',
     ],
   ];
 
@@ -36,7 +32,6 @@ function LearnFeatures() {
         index={i}
         title={feature[0]}
         description={feature[1]}
-        gif={feature[2]}
       />
     );
   }
