@@ -46,60 +46,66 @@ function CodeBoxContainer({ data, showDemo }) {
   return (
     <div className={styles.codebox}>
       <div className={styles.clientWrapper}>
-        <div className={styles.client}>
-          <h3> GraphQL Client Mutations</h3>
-          <Button
-            auto
-            clickable={true}
-            color='default'
-            rounded='false'
-            size='sm'
-            css={{ px: '$8' }}
-            onClick={() => {
-              exportGQLClientMutationsCode();
-            }}
-          >
-            Export Code
-          </Button>
+        <div className={styles.clientMutation}>
+          <div className={styles.exportWrapper}>
+            <h3> GraphQL Client Mutations</h3>
+            <Button
+              auto
+              clickable={true}
+              color='default'
+              rounded='false'
+              size='sm'
+              css={{ px: '$4', height: '$10' }}
+              onClick={() => {
+                exportGQLClientMutationsCode();
+              }}
+            >
+              Export Code
+            </Button>
+          </div>
           <SyntaxHighlighter language='javascript' style={qtCreator} className={styles.syntaxHighlighter}>
             {showDemo ? SampleGQLClientMutationsCode : uriDataGQLClientMutationsCode}
           </SyntaxHighlighter>
         </div>
-        <div className={styles.client}>
-          <h3> GraphQL Client Queries</h3>
-          <Button
-            auto
-            clickable={true}
-            color='default'
-            rounded='false'
-            size='sm'
-            css={{ px: '$8' }}
-            onClick={() => {
-              exportGQLClientQueriesCode();
-            }}
-          >
-            Export Code
-          </Button>
+        <div className={styles.clientQuery}>
+          <div className={styles.exportWrapper}>
+            <h3> GraphQL Client Queries</h3>
+            <Button
+              auto
+              clickable={true}
+              color='default'
+              rounded='false'
+              size='sm'
+              css={{ px: '$4', height: '$10' }}
+              onClick={() => {
+                exportGQLClientQueriesCode();
+              }}
+            >
+              Export Code
+            </Button>
+          </div>
           <SyntaxHighlighter language='javascript' style={qtCreator} className={styles.syntaxHighlighter}>
             {showDemo ? SampleGQLClientQueriesCode : uriDataGQLClientQueriesCode}
           </SyntaxHighlighter>
         </div>
       </div>
       <div className={styles.gqldata}>
-        <h3> GraphQL Types, Root Queries, & Mutations </h3>
-        <Button
-          auto
-          clickable={true}
-          color='default'
-          rounded='false'
-          size='sm'
-          css={{ px: '$8' }}
-          onClick={() => {
-            exportGQLServerCode();
-          }}
-        >
-          Export Code
-        </Button>
+        <div className={styles.exportWrapper}>
+          <h3> GraphQL Types, Root Queries, & Mutations </h3>
+          <Button
+            auto
+            clickable={true}
+            color='default'
+            rounded='false'
+            size='sm'
+            css={{ px: '$4', height: '$10' }}
+            onClick={() => {
+              exportGQLServerCode();
+            }}
+          >
+            Export Code
+          </Button>
+        </div>
         <SyntaxHighlighter language='javascript' style={qtCreator} className={styles.syntaxHighlightGraph}>
           {showDemo ? SampleGQLServerCode : uriDataGQLServerCode}
         </SyntaxHighlighter>

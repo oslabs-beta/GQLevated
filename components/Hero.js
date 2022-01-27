@@ -14,7 +14,7 @@ const rotate = {
     rotate: [0, 750, 720],
     transition: {
       linear: easing,
-      duration: 2,
+      duration: 2.2,
     },
   },
 };
