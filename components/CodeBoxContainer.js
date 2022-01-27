@@ -6,8 +6,6 @@ import qtCreator from '../node_modules/react-syntax-highlighter/dist/esm/styles/
 import { GQLServerCode, GQLClientQueriesCode, GQLClientMutationsCode } from '../server/sampleDB';
 
 function CodeBoxContainer({ data, showDemo }) {
-  // const [showDemo, setShowDemo] = useState(false);
-  // if (!data) setShowDemo(true);
   const uriDataGQLServerCode = data ? data.GQLServerCode : '';
   const uriDataGQLClientMutationsCode = data ? data.GQLClientMutationsCode : '';
   const uriDataGQLClientQueriesCode = data ? data.GQLClientQueriesCode : '';

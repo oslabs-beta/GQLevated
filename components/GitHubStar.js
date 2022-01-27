@@ -7,29 +7,29 @@ import GitHubLogo from '../public/GitHub-Mark-64px.png';
 import GitHubButton from 'react-github-btn';
 import GraphqlLogo from '../public/graphql2.png';
 
-
 function GitHubStar() {
   return (
     <footer>
       <ul className={styles.ul}>
-      <Link href='https://graphql.org/'>
-        <li className={styles.listgqllogo}>
-        <Image src={GraphqlLogo} width={50} height={50} alt="logo-gif" />
-        </li>
-      </Link>
-      <Link href='https://www.linkedin.com/company/gqlevated'>
-        <li className={styles.listitem}>
-        <Image src={LinkedInLogo} width={40} height={40} alt="logo-gif" />
-        </li>
-      </Link>
-      <Link href='https://github.com/oslabs-beta/GQLevated'> 
-        <li className={styles.listitem}>
-        <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt="logo-gif" />
-        </li>
-      </Link>
+        <a href='https://graphql.org/' target='_blank' rel='noreferrer noopener'>
+          <li className={styles.listgqllogo}>
+            <Image src={GraphqlLogo} width={50} height={50} alt='logo-gif' />
+          </li>
+        </a>
+        <a href='https://www.linkedin.com/company/gqlevated' target='_blank' rel='noreferrer noopener'>
+          <li className={styles.listitem}>
+            <Image src={LinkedInLogo} width={40} height={40} alt='logo-gif' />
+          </li>
+        </a>
+        <a href='https://github.com/oslabs-beta/GQLevated' target='_blank' rel='noreferrer noopener'>
+          <li className={styles.listitem}>
+            <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt='logo-gif' />
+          </li>
+        </a>
         <li className={styles.listitem}>
           <GitHubButton
             href='https://github.com/oslabs-beta/GQLevated'
+            target='_blank'
             data-icon='octicon-star'
             data-size='large'
             data-show-count='true'

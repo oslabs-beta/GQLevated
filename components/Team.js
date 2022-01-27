@@ -12,9 +12,9 @@ import LinkedInLogo from '../public/Linkedin-logo-on-transparent-Background-PNG-
 function Team() {
   return (
     <div className={styles.team} id='team'>
-      <Spacer y={5} />
+      <Spacer y={2.5} />
       <h1>Meet the Team</h1>
-      <Spacer y={4} />
+      <Spacer y={2.5} />
       <Grid.Container gap={5} justify='center'>
         <Grid justify='center'>
           <Card css={{ w: '100%', border: '$space$1 solid #a359d8' }} bordered shadow={true}>
@@ -30,12 +30,12 @@ function Team() {
             <Divider />
             <Card.Footer>
               <Row justify='space-around'>
-                <Link href='https://github.com/JohnAlicastro'>
+                <a href='https://github.com/JohnAlicastro' target='_blank' rel='noreferrer noopener'>
                   <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt='logo-gif' />
-                </Link>
-                <Link href='https://www.linkedin.com/in/john-alicastro-482032187'>
+                </a>
+                <a href='https://www.linkedin.com/in/john-alicastro-482032187' target='_blank' rel='noreferrer noopener'>
                   <Image src={LinkedInLogo} width={40} height={40} alt='logo-gif' />
-                </Link>
+                </a>
               </Row>
             </Card.Footer>
           </Card>
@@ -54,12 +54,12 @@ function Team() {
             <Divider />
             <Card.Footer>
               <Row justify='space-around'>
-                <Link href='https://github.com/JohnsonChe'>
+                <a href='https://github.com/JohnsonChe' target='_blank' rel='noreferrer noopener'>
                   <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt='logo-gif' />
-                </Link>
-                <Link href='https://www.linkedin.com/in/JohnsonChe/'>
+                </a>
+                <a href='https://www.linkedin.com/in/JohnsonChe/' target='_blank' rel='noreferrer noopener'>
                   <Image src={LinkedInLogo} width={40} height={40} alt='logo-gif' />
-                </Link>
+                </a>
               </Row>
             </Card.Footer>
           </Card>
@@ -78,12 +78,12 @@ function Team() {
             <Divider />
             <Card.Footer>
               <Row justify='space-around'>
-                <Link href='https://github.com/Nikootz'>
+                <a href='https://github.com/Nikootz' target='_blank' rel='noreferrer noopener'>
                   <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt='logo-gif' />
-                </Link>
-                <Link href='https://www.linkedin.com/in/nicholas-gonzalez-036b1751/'>
+                </a>
+                <a href='https://www.linkedin.com/in/nicholas-gonzalez-036b1751/' target='_blank' rel='noreferrer noopener'>
                   <Image src={LinkedInLogo} width={40} height={40} alt='logo-gif' />
-                </Link>
+                </a>
               </Row>
             </Card.Footer>
           </Card>
@@ -102,12 +102,12 @@ function Team() {
             <Divider />
             <Card.Footer>
               <Row justify='space-around'>
-                <Link href='https://github.com/QtieCoder'>
+                <a href='https://github.com/QtieCoder' target='_blank' rel='noreferrer noopener'>
                   <Image src={GitHubLogo} className={styles.scaleDown} width={40} height={40} alt='logo-gif' />
-                </Link>
-                <Link href='https://www.linkedin.com/in/quyencalixto/'>
+                </a>
+                <a href='https://www.linkedin.com/in/quyencalixto/' target='_blank' rel='noreferrer noopener'>
                   <Image src={LinkedInLogo} width={40} height={40} alt='logo-gif' />
-                </Link>
+                </a>
               </Row>
             </Card.Footer>
           </Card>
