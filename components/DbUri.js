@@ -45,7 +45,7 @@ function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsErro
     <AnimatePresence exitBeforeEnter>
       <motion.div variants={fadeInRight} initial='initial' exit='exit' animate='initial' className={styles.container}>
         <div className={styles.uriString}>
-          <h2>Elevate your project with seamless integration</h2>
+          <h2>Elevate your project with seamless GraphQL integration</h2>
           <Spacer y={1.5} />
           <Input
             clearable
@@ -80,7 +80,7 @@ function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsErro
           </Button>
         </div>
         <div className={styles.sampledb}>
-          <h2>See how it works with our sample database </h2>
+          <h2>See how it works with our Sample Database </h2>
           <Spacer y={1.5} />
           <Button
             auto
