@@ -28,7 +28,7 @@ const fadeInRight = {
   },
 };
 
-function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsError }) {
+function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsError, setLoader, setQueryData }) {
   const uriField = useRef();
 
   const handleClick = (e) => {
@@ -69,6 +69,8 @@ function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsErro
             size='sm'
             css={{ px: '$14' }}
             onClick={(e) => {
+              setLoader(true);
+              setQueryData('');
               handleClick(e);
               setShowDemo(false);
               setIsError(false);
@@ -89,7 +91,14 @@ function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsErro
             css={{ px: '$10' }}
             onClick={() => {
               hidePanel();
-              setShowDemo(true);
+              setIsError(false);
+              setShowDemo(false);
+              setQueryData('');
+              setLoader(true);
+              setTimeout(() => {
+                setLoader(false);
+                setShowDemo(true);
+              }, 700);
             }}
           >
             Sample Database
