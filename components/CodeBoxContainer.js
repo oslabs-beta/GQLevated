@@ -15,20 +15,20 @@ function CodeBoxContainer({ data, showDemo }) {
       <div className={styles.clientWrapper}>
         <div className={styles.client}>
           <h3> GraphQL Client Queries</h3>
-          <SyntaxHighlighter language='javascript' style={qtCreator}>
+          <SyntaxHighlighter language='javascript' style={qtCreator} className={styles.syntaxHighlighter}>
             {showDemo ? GQLClientQueriesCode : uriDataGQLClientQueriesCode}
           </SyntaxHighlighter>
         </div>
         <div className={styles.client}>
           <h3> GraphQL Client Mutations</h3>
-          <SyntaxHighlighter language='javascript' style={qtCreator}>
+          <SyntaxHighlighter language='javascript' style={qtCreator} className={styles.syntaxHighlighter}>
             {showDemo ? GQLClientMutationsCode : uriDataGQLClientMutationsCode}
           </SyntaxHighlighter>
         </div>
       </div>
       <div className={styles.gqldata}>
         <h3> GraphQL Types, Root Queries, & Mutations </h3>
-        <SyntaxHighlighter language='javascript' style={qtCreator}>
+        <SyntaxHighlighter language='javascript' style={qtCreator} className={styles.syntaxHighlightGraph}>
           {showDemo ? GQLServerCode : uriDataGQLServerCode}
         </SyntaxHighlighter>
       </div>

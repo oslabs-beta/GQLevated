@@ -11,3 +11,8 @@
 .scaleDown {
   transform: scale(0.9);
 }
+
+.cardHeader {
+  display: flex;
+  justify-content: center;
+}

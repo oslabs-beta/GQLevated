@@ -11,10 +11,10 @@ const easing = [0.17, 0.67, 0.84, 0.66];
 
 const rotate = {
   initial: {
-    rotate: [0, 360],
+    rotate: [0, 750, 720],
     transition: {
       linear: easing,
-      duration: 1,
+      duration: 2,
     },
   },
 };
@@ -29,7 +29,7 @@ function Hero() {
       </motion.div>
       <Spacer y={4} />
       <h1>GQLevated</h1>
-      <Spacer y={.5} />
+      <Spacer y={0.5} />
       <h2>Elevate your projects with seamless GraphQL integration</h2>
       <Spacer y={3} />
       <Link href='/#learn'>
