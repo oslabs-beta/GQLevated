@@ -7,8 +7,8 @@
   /* max-width: 75%; */
   /* margin: auto; */
   display: flex;
-  align-content: flex-start;
-  justify-content: flex-start;
+  align-content: center;
+  justify-content: center;
   /* border-radius: 10px; */
   text-align: center;
   background-color: hsla(0, 100%, 100%, 0.05);
@@ -25,18 +25,18 @@
   /* border-left: 1px solid #e8ebf0;
   border-right: 1px solid #e8ebf0; */
   overflow: auto;
-  padding: 1rem;
+  /* padding: 1rem; */
+  padding: 0.5rem 1rem;
 }
 .client {
   /* position: relative; */
   /* float: right; */
   width: 100%;
   height: 60%;
-  border-radius: 10px;
   overflow-y: hidden;
   overflow-x: hidden;
   overflow: scroll;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .clientWrapper {
@@ -44,4 +44,16 @@
   flex-direction: column;
   height: 100%;
   width: 50%;
+}
+
+.syntaxHighlighter {
+  height: 33vh;
+  margin: 0;
+  border-radius: 0;
+}
+
+.syntaxHighlightGraph {
+  height: 75.5vh;
+  margin: 0;
+  border-radius: 0;
 }
