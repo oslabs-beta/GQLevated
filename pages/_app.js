@@ -11,6 +11,7 @@ const theme = createTheme({
       background: '#121212',
       text: 'hsla(0, 100%, 100%, 0.87)',
       selection: '#fff',
+      codeLight: 'rgba(27,31,36,0)',
       gradient: 'linear-gradient(to right, #a359d8, rgba(21, 5, 194, 0.845)',
 
       // you can also create your own color
