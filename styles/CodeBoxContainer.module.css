@@ -16,6 +16,9 @@
 }
 
 .gqldata {
+  /* position: relative; */
+  /* display: flex; */
+  /* flex-direction: column; */
   /* float: left; */
   width: 50%;
   /* border-left: 1px solid #e8ebf0;
@@ -23,7 +26,17 @@
   overflow: auto;
 }
 .client {
+  /* position: relative; */
   /* float: right; */
-  width: 50%;
+  width: 100%;
+  height: 50%;
   border-radius: 10px;
+  overflow: auto;
+}
+
+.clientWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 34%;
 }

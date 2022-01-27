@@ -28,7 +28,7 @@ const fadeInRight = {
   },
 };
 
-function DbUri({ hidePanel }) {
+function DbUri({ hidePanel, fetchData, setShowDemo }) {
   const uriField = useRef();
   const [errorMsg, setErrorMsg] = useState('');
   const [isError, setIsError] = useState(false);
@@ -39,17 +39,7 @@ function DbUri({ hidePanel }) {
     if (URILink.length > 0) {
       const encryptedURL = CryptoJS.AES.encrypt(URILink, secretKey).toString();
 
-      fetch('http://localhost:8080/convert-sql-db', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ link: encryptedURL }),
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        .catch((err) => {
-          setErrorMsg(err);
-          setIsError(true);
-        });
+      fetchData(encryptedURL);
     }
   };
 
@@ -72,14 +62,36 @@ function DbUri({ hidePanel }) {
             }}
           />
           <Spacer y={1.5} />
-          <Button auto clickable={true} color='gradient' rounded='false' size='sm' css={{ px: '$14' }} onClick={(e) => handleClick(e)}>
+          <Button
+            auto
+            clickable={true}
+            color='default'
+            rounded='false'
+            size='sm'
+            css={{ px: '$14' }}
+            onClick={(e) => {
+              handleClick(e);
+              setShowDemo(false);
+            }}
+          >
             Submit
           </Button>
         </div>
         <div className={styles.sampledb}>
           <h2>See how it works with our sample database </h2>
           <Spacer y={1.5} />
-          <Button auto clickable={true} color='default' rounded='false' size='sm' css={{ px: '$10' }} onClick={() => hidePanel()}>
+          <Button
+            auto
+            clickable={true}
+            color='default'
+            rounded='false'
+            size='sm'
+            css={{ px: '$10' }}
+            onClick={() => {
+              hidePanel();
+              setShowDemo(true);
+            }}
+          >
             Sample Database
           </Button>
         </div>
