@@ -30,6 +30,7 @@ const fadeInRight = {
 
 function DbUri({ hidePanel, fetchData, setShowDemo }) {
   const uriField = useRef();
+  //move these states to demo.js
   const [errorMsg, setErrorMsg] = useState('');
   const [isError, setIsError] = useState(false);
 
