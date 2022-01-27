@@ -54,3 +54,8 @@
   box-shadow: 0px 0px 10px #aaa9a9;
   cursor: pointer;
 }
+
+.error {
+  font-size: 1rem;
+  color: rgb(189, 86, 86);
+}

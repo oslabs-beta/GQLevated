@@ -9,6 +9,8 @@ function Demo() {
   const [showURIPanel, setShowURIPanel] = useState(true);
   const [queryData, setQueryData] = useState();
   const [showDemo, setShowDemo] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+  const [isError, setIsError] = useState(false);
 
   const fetchData = (uri) => {
     fetch('http://localhost:8080/convert-sql-db', {
@@ -16,18 +18,28 @@ function Demo() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ link: uri }),
     })
-      .then((res) => res.json())
-      .then((data) => setQueryData(data))
-      .catch((err) => {
-        setErrorMsg(err);
+    .then((res) => res.json())
+    .then((data) => {
+      if(data.err){
         setIsError(true);
-      });
-  };
+        setErrorMsg(data.err)
+        console.log(data.err);
+      } else {
+        setQueryData(data);
+        setShowURIPanel(false);
+      }
+
+    })
+    .catch((err) => {
+      setErrorMsg(err);
+      setIsError(true);
+    });
+};
 
   return (
     <div className={styles.wrapper}>
       {showURIPanel ? (
-        <DbUri setShowDemo={setShowDemo} fetchData={fetchData} hidePanel={() => setShowURIPanel(false)} />
+        <DbUri isError={isError} errorMsg={errorMsg} setIsError={setIsError} setShowDemo={setShowDemo} fetchData={fetchData} hidePanel={() => setShowURIPanel(false)} />
       ) : (
         <HiddenURIPanel showPanel={() => setShowURIPanel(true)} />
       )}

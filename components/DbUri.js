@@ -28,10 +28,10 @@ const fadeInRight = {
   },
 };
 
-function DbUri({ hidePanel, fetchData, setShowDemo }) {
+function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsError}) {
   const uriField = useRef();
-  const [errorMsg, setErrorMsg] = useState('');
-  const [isError, setIsError] = useState(false);
+  // const [errorMsg, setErrorMsg] = useState('');
+  // const [isError, setIsError] = useState(false);
 
   const handleClick = (e) => {
     const URILink = uriField.current.value;
@@ -49,18 +49,19 @@ function DbUri({ hidePanel, fetchData, setShowDemo }) {
         <div className={styles.uriString}>
           <h2>Elevate your project with seamless integration</h2>
           <Spacer y={1.5} />
-          {isError && <span>{errorMsg.err}</span>}
           <Input
-            clearable
-            bordered
-            width='20rem'
-            labelPlaceholder='PostgreSQL URI'
-            initialValue=''
-            ref={uriField}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') handleClick(e);
-            }}
+          clearable
+          bordered
+          width='20rem'
+          labelPlaceholder='PostgreSQL URI'
+          initialValue=''
+          ref={uriField}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleClick(e);
+          }}
           />
+          <Spacer y={1.5} />
+          {isError ? <span className={styles.error}>{errorMsg}</span>: null}
           <Spacer y={1.5} />
           <Button
             auto
@@ -72,6 +73,7 @@ function DbUri({ hidePanel, fetchData, setShowDemo }) {
             onClick={(e) => {
               handleClick(e);
               setShowDemo(false);
+              setIsError(false);
             }}
           >
             Submit
