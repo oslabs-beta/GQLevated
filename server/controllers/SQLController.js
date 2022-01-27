@@ -35,7 +35,7 @@ Controller.getSQLDBname = (req, res, next) => {
         log: `ERROR in server middleware @ getSQLDBname: ${err}`,
         status: 400,
         message: {
-          err: 'Unable to connect to SQL database, please confirm URI',
+          err: 'Unable to connect to PostgreSQL Database Please enter a valid Connection String',
         },
       };
       return next(errObj);
