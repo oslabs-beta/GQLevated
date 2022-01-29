@@ -90,7 +90,6 @@ function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsErro
             size='sm'
             css={{ px: '$10' }}
             onClick={() => {
-              hidePanel();
               setIsError(false);
               setShowDemo(false);
               setQueryData('');
@@ -98,6 +97,7 @@ function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsErro
               setTimeout(() => {
                 setLoader(false);
                 setShowDemo(true);
+                hidePanel();
               }, 700);
             }}
           >

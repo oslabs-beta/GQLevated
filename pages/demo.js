@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import DbUri from '../components/DbUri';
@@ -50,6 +51,10 @@ function Demo() {
 
   return (
     <div className={styles.wrapper}>
+      <Head>
+        <title>GQLevated</title>
+        <meta property='og:title' content='GQLevated' key='title' />
+      </Head>
       {showURIPanel ? (
         <DbUri
           isError={isError}
