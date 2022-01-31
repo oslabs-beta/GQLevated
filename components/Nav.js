@@ -18,13 +18,15 @@ function Nav() {
           <Link href='/'>
             <li className='hover list-item'>Home</li>
           </Link>
-
+          <Link href='/#learn'>
+            <li className='hover list-item'>Tutorial</li>
+          </Link>
           <Link href='/about'>
-            <li className='hover list-item'>About</li>
+            <li className='hover list-item'>About Us</li>
           </Link>
 
           <Link href='/demo'>
-            <li className='hover list-item'>Demo</li>
+            <li className='hover list-item'>Use GQLevated</li>
           </Link>
         </ul>
       </nav>
