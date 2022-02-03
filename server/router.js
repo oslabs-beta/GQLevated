@@ -24,6 +24,8 @@ router.get(
     // console.log('this is res.locals.GQLClientMutationsCode', res.locals.GQLClientMutationsCode);
 
     const GQLCode = {
+      DBName: res.locals.DBname,
+      SQLSchema: res.locals.SQLSchema,
       GQLServerCode: res.locals.GQLServerCode,
       GQLClientQueriesCode: res.locals.GQLClientQueriesCode,
       GQLClientMutationsCode: res.locals.GQLClientMutationsCode,
@@ -48,6 +50,8 @@ router.post(
     // console.log('this is res.locals.GQLClientMutationsCode', res.locals.GQLClientMutationsCode);
 
     const GQLCode = {
+      DBName: res.locals.DBname,
+      SQLSchema: res.locals.SQLSchema,
       GQLServerCode: res.locals.GQLServerCode,
       GQLClientQueriesCode: res.locals.GQLClientQueriesCode,
       GQLClientMutationsCode: res.locals.GQLClientMutationsCode,
