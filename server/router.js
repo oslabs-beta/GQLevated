@@ -79,7 +79,7 @@ router.post(
       GQLClientMutationsCode: res.locals.GQLClientMutationsCode,
     };
     // res.status(200).json(GQLCode);
-    res.status(200).json(res.locals.Mongo);
+    res.status(200).json(res.locals.MongoData);
   }
 );
 
