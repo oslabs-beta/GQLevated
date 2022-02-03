@@ -1,19 +1,13 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from '../styles/Nav.module.css';
 import GitHubStar from './GitHubStar';
 import GQLevated from './GQLevated.js';
 
 function Nav() {
   //{transition} pass this to nav bar in order to get the below to work
-  const [isHover, setIsHover] = useState(false);
-  const router = useRouter();
-
   // //this is changing display values/ class the nav has
-  
+
   // const [show, setShow] = useState(false);
 
   // const transitionNavBar = () => {

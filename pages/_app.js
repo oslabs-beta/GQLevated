@@ -1,5 +1,7 @@
 import Layout from '../components/Layout';
 import { createTheme, NextUIProvider } from '@nextui-org/react';
+import { store } from '../store';
+import { Provider } from 'react-redux';
 import '../styles/globals.css';
 
 const theme = createTheme({
@@ -25,11 +27,13 @@ const theme = createTheme({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <NextUIProvider theme={theme}>
-        <Component {...pageProps} />
-      </NextUIProvider>
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <NextUIProvider theme={theme}>
+          <Component {...pageProps} />
+        </NextUIProvider>
+      </Layout>
+    </Provider>
   );
 }
 
