@@ -1,4 +1,5 @@
 .wrapper {
+  margin-top: 5%;
   display: flex;
   width: 100%;
   height: max-content;
