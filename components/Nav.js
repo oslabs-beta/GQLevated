@@ -7,7 +7,8 @@ import styles from '../styles/Nav.module.css';
 import GitHubStar from './GitHubStar';
 import GQLevated from './GQLevated.js';
 
-function Nav({transition}) {
+function Nav() {
+  //{transition} pass this to nav bar in order to get the below to work
   const [isHover, setIsHover] = useState(false);
   const router = useRouter();
 
