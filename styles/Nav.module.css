@@ -1,4 +1,9 @@
 .navbar {
+  /* position fixed and top 0 keeps the nav bar fixed */
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
   display: flex;
   padding: 0 2rem;
   background-color: var(--primary-color);

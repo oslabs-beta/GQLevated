@@ -7,9 +7,34 @@ import styles from '../styles/Nav.module.css';
 import GitHubStar from './GitHubStar';
 import GQLevated from './GQLevated.js';
 
-function Nav() {
+function Nav({transition}) {
   const [isHover, setIsHover] = useState(false);
   const router = useRouter();
+
+  // //this is changing display values/ class the nav has
+  
+  // const [show, setShow] = useState(false);
+
+  // const transitionNavBar = () => {
+  //   if (transition && window.scrollY > 250) setShow(true);
+  //   else {
+  //     setShow(false);
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   let mounted = true;
+  //   if (transition && mounted && window.scrolly > 250) setShow(true);
+
+  //   if (transition){
+  //     window.addEventListener('scroll', transitionNavBar);
+  //   } else setShow(true);
+
+  //   return () => {
+  //     mounted = false;
+  //     window.removeEventListener('scroll', transitionNavBar);
+  //   }
+  // },{show, transition});
 
   return (
     <div className={styles.navbar}>
