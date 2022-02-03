@@ -1,16 +1,10 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from '../styles/Nav.module.css';
 import GitHubStar from './GitHubStar';
 import GQLevated from './GQLevated.js';
 
 function Nav() {
-  const [isHover, setIsHover] = useState(false);
-  const router = useRouter();
-
   return (
     <div className={styles.navbar}>
       <nav>

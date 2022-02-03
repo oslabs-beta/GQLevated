@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useDispatch } from 'react-redux';
+import { setQueries } from '../features/demoSlice';
 import DbUri from '../components/DbUri';
 import Loader from '../components/Loader';
 import CodeBoxContainer from '../components/CodeBoxContainer';
@@ -14,6 +16,8 @@ function Demo() {
   const [errorMsg, setErrorMsg] = useState('');
   const [isError, setIsError] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
+
+  const dispatch = useDispatch();
 
   const fetchData = (uri) => {
     fetch('http://localhost:8080/convert-sql-db', {
@@ -32,7 +36,8 @@ function Demo() {
         } else {
           // setShowLoader(false);
           await delayLoader();
-          setQueryData(data);
+          // setQueryData(data);
+          dispatch(setQueries(data));
           setShowURIPanel(false);
         }
       })
