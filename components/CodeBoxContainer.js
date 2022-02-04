@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import { fs } from 'fs';
 import FileSaver, { saveAs } from 'file-saver';
+import { useSelector } from 'react-redux';
 import styles from '../styles/CodeBoxContainer.module.css';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import nightOwl from '../node_modules/react-syntax-highlighter/dist/esm/styles/hljs/night-owl';
@@ -8,7 +9,10 @@ import qtCreator from '../node_modules/react-syntax-highlighter/dist/esm/styles/
 import { Spacer, Button } from '@nextui-org/react';
 import { SampleGQLServerCode, SampleGQLClientQueriesCode, SampleGQLClientMutationsCode } from '../server/sampleDB';
 
-function CodeBoxContainer({ data, showDemo }) {
+function CodeBoxContainer() {
+  const showDemo = useSelector((state) => state.demo.showDemo);
+  const data = useSelector((state) => state.demo.queries);
+
   const uriDataGQLServerCode = data ? data.GQLServerCode : '';
   const uriDataGQLClientMutationsCode = data ? data.GQLClientMutationsCode : '';
   const uriDataGQLClientQueriesCode = data ? data.GQLClientQueriesCode : '';

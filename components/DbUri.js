@@ -1,7 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../styles/DbUri.module.css';
-import { Input, Spacer, Button, Loading } from '@nextui-org/react';
+import { Input, Spacer, Button } from '@nextui-org/react';
+import { useDispatch } from 'react-redux';
+import { setQueries, showDemo } from '../features/demoSlice';
 import CryptoJS from 'crypto-js';
 import secretKey from '../server/secretKey';
 
@@ -28,8 +30,9 @@ const fadeInRight = {
   },
 };
 
-function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsError, setLoader, setQueryData }) {
+function DbUri({ hidePanel, fetchData, isError, errorMsg, setIsError, setLoader }) {
   const uriField = useRef();
+  const dispatch = useDispatch();
 
   const handleClick = (e) => {
     const URILink = uriField.current.value;
@@ -70,9 +73,9 @@ function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsErro
             css={{ px: '$14' }}
             onClick={(e) => {
               setLoader(true);
-              setQueryData('');
+              dispatch(setQueries(''));
               handleClick(e);
-              setShowDemo(false);
+              dispatch(showDemo(false));
               setIsError(false);
             }}
           >
@@ -90,14 +93,15 @@ function DbUri({ hidePanel, fetchData, setShowDemo, isError, errorMsg, setIsErro
             size='sm'
             css={{ px: '$10' }}
             onClick={() => {
-              hidePanel();
               setIsError(false);
-              setShowDemo(false);
-              setQueryData('');
+              dispatch(showDemo(false)); //update showDemo state in redux
+              // setQueryData('');
+              dispatch(setQueries(''));
               setLoader(true);
               setTimeout(() => {
                 setLoader(false);
-                setShowDemo(true);
+                dispatch(showDemo(true)); //update showDemo state in redux
+                hidePanel();
               }, 700);
             }}
           >

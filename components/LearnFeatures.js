@@ -1,25 +1,25 @@
 import React from 'react';
 import styles from '../styles/Learn.module.css';
 import Features from './Features';
-
+import { Spacer } from '@nextui-org/react';
 
 function LearnFeatures() {
   const features = [
     [
-      'Import your PostgreSQL database',
-      'Users will be able to enter their PostgreSQL connection string into a text field or use our sample database to explore GQLevated.',
+      'Connect to your database',
+      'Enter your PostgreSQL or MongoDB connection string and connect to your database. Don\'t have a connection string but still want to see how it works? No problem! Connect to our PostgresQL Sample Database and see GQLevated in action.',
      ],
     [
-      'GraphQL Code',
-      'Automatically generate GraphQL types, resolvers, mutations and client queries to inject into your own application.',
+      'Generate your GraphQL Code',
+      'With one simple click of a button GQLevated connects to your database, parses the data and generates the corresponding GraphQL code for you. This production-ready GraphQL code includes server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. It is displayed for you in an easy to reason about way and ready to be injected into your own application.',
     ],
     [
       'Export your GraphQL Code',
-      'Users will have the option to either copy and paste the displayed code or export the code as individual files.',
+      'In addition to copying and pasting the newly generated GraphQL code straight from the browser display, users also have the option to export their customized GraphQL code as individual JavaScript files. Simply click on the ‘Export Code‘ button in the corresponding container of the code that you wish to download.',
     ],
     [
       'Visualize your GraphQL Schema',
-      'Users will be able to visualize and interact their database relationships.',
+      'COMING SOON - Visualize and interact with your database relationships!',
     ],
   ];
 
@@ -41,14 +41,17 @@ function LearnFeatures() {
   <div className={styles.learn} id='learn'>
     <div className={styles.overview}>
       <br></br>
-      <h1>What can GQLevated do for you?</h1>
+      <h1 className={styles.headers}>What can GQLevated do for you?</h1>
       <br></br>
-      <p>Our Hosted Web App developer tool will supply users with customized production-ready GraphQL types, resolvers, mutations and queries. Allowing developers to spend more time solving problems and less time tediously writing GraphQL code. Thus ELEVATING the project as a whole. 
+      <p>Our Web Development Tool supplies users with customized production-ready GraphQL code including server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. This allows developers to spend more time solving problems and less time tediously writing GraphQL code, thus ELEVATING the project as a whole.
       <br></br>
       <br></br>
-      And free to use for everyone! No need to create an account.
+      And it’s free to use for everyone - no need to create an account!
       </p>
+      <Spacer y={5}/>
+      <h1 className={styles.headers}>How it works</h1>
     </div>
+    
     <div className={styles.allFeatures}>{introFeatures}</div>   
   </div>
   );

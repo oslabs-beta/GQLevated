@@ -34,7 +34,7 @@ app.use((err, req, res, next) => {
 
 /* LISTEN */
 app.listen(PORT, () => {
-  console.log(`Ya Server Has Turned Da Fuck On! PORT: ${PORT}...`);
+  console.log(`Server listening on PORT: ${PORT}...`);
 });
 
 module.exports = app;

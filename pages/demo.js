@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import Head from 'next/head';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useDispatch } from 'react-redux';
+import { setQueries, showDemo } from '../features/demoSlice';
 import DbUri from '../components/DbUri';
 import Loader from '../components/Loader';
 import CodeBoxContainer from '../components/CodeBoxContainer';
@@ -8,11 +11,18 @@ import styles from '../styles/Demo.module.css';
 
 function Demo() {
   const [showURIPanel, setShowURIPanel] = useState(true);
-  const [queryData, setQueryData] = useState();
-  const [showDemo, setShowDemo] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [isError, setIsError] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    return () => {
+      dispatch(setQueries(''));
+      dispatch(showDemo(false));
+    };
+  }, []);
 
   const fetchData = (uri) => {
     fetch('http://localhost:8080/convert-sql-db', {
@@ -23,15 +33,13 @@ function Demo() {
       .then((res) => res.json())
       .then(async (data) => {
         if (data.err) {
-          // setShowLoader(false);
           await delayLoader();
           setIsError(true);
           setErrorMsg(data.err);
           console.log(data.err);
         } else {
-          // setShowLoader(false);
           await delayLoader();
-          setQueryData(data);
+          dispatch(setQueries(data));
           setShowURIPanel(false);
         }
       })
@@ -50,22 +58,24 @@ function Demo() {
 
   return (
     <div className={styles.wrapper}>
+      <Head>
+        <title>GQLevated</title>
+        <meta property='og:title' content='GQLevated' key='title' />
+      </Head>
       {showURIPanel ? (
         <DbUri
           isError={isError}
           errorMsg={errorMsg}
           setIsError={setIsError}
-          setShowDemo={setShowDemo}
           fetchData={fetchData}
           setLoader={setShowLoader}
-          setQueryData={setQueryData}
           hidePanel={() => setShowURIPanel(false)}
         />
       ) : (
         <HiddenURIPanel showPanel={() => setShowURIPanel(true)} />
       )}
 
-      <CodeBoxContainer data={queryData} showDemo={showDemo} />
+      <CodeBoxContainer />
       {showLoader && <Loader />}
     </div>
   );
