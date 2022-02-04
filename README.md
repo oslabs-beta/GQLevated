@@ -1,40 +1,78 @@
 # GQLevated
+<img src='./public/GQLevatedWordMarkSlogan.svg'>
+<br/>
+<br/>
 
-Elevate your projects with seamless GraphQL integration
+[GQLevated](http://www.GQLevated.com) is an open source GraphQL prototyping tool. Our Web Development Tool supplies users with customized production-ready GraphQL code including server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. This allows developers to spend more time solving problems and less time tediously writing GraphQL code, thus ELEVATING the project as a whole.
 
-# Next.js
+And it’s free to use for everyone - no need to create an account!
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Accelerated by <a href="https://github.com/oslabs-beta/" >OS Labs</a>.
 
-## Getting Started
+<hr />
 
-First, run the development server:
+## Background
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+GraphQL is a query language for APIs and can be an ideal method over RESTful architecture for fulfilling queries of your existing data with less API calls. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+However, making the switch to GraphQL on a project that utilizes relational databases and RESTful API is very time consuming and labor intensive due to its redundant structure, requiring a large amount of code to be written.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<hr />
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Let's Get Started
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Visit <a class="nav-link" href="https://GQLevated.com/">https://GQLevated.com</a> to launch our web hosted tool.
 
-## Learn More
+- Click the Learn More Button on our landing page to learn what GQLevated can do.
+- Click the Use GQLevated to start using our tool.
 
-To learn more about Next.js, take a look at the following resources:
+<hr/>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How Does It Work?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Connect to your database
 
-## Deploy on Vercel
+Enter your PostgreSQL or MongoDB connection string and connect to your database.
+Don’t have a connection string but still want to see how it works? No problem! 
+Connect to our PostgresQL Sample Database and see GQLevated in action.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<img src='./public/home1.gif'>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Generate your GraphQL code
+
+With one simple click of a button GQLevated connects to your database, parses the data and generates the corresponding GraphQL code for you. This production-ready GraphQL code includes server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. It is displayed for you in an easy to reason about way and ready to be injected into your own application.
+
+<img src='./public/home2.gif'>
+
+## Export your GraphQL code
+
+In addition to copying and pasting the newly generated GraphQL code straight from the browser display, users also have the option to export their customized GraphQL code as individual JavaScript files. Simply click on the ‘Export Code‘ button in the corresponding container of the code that you wish to download.
+
+<img src='./public/home3.gif'>
+
+## Visualize your GraphQL schema
+
+COMING SOON - Visualize and interact with your database relationships!
+
+<img src='./public/visualplaceholder.jpeg'>
+<br />
+<br />
+
+
+<hr/>
+
+## GQLevated Developers
+
+[John Alicastro](https://www.linkedin.com/in/johnalicastro) [@JohnAlicastro](https://github.com/JohnAlicastro)
+
+[Johnson Che](ttps://www.linkedin.com/in/JohnsonChe/) [@JohnsonChe](https://github.com/JohnsonChe)
+
+[Nicholas Gonzalez](https://www.linkedin.com/in/nicholas-gonzalez-036b1751/) [@Nikootz](https://github.com/Nikootz)
+
+[Quyen Calixto](https://www.linkedin.com/in/quyencalixto/) [@QtieCoder](https://github.com/QtieCoder)
+
+<br/>
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/oslabs-beta/GQLevated/LICENSE.md) file for details.
