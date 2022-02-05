@@ -24,21 +24,21 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-      <li><a href="#about">About GQLEvated</a></li> 
+      <li><a href="#about-gqlevated">About GQLEvated</a></li> 
       <li><a href="#background">Background</a></li>
       <li><a href="#lets-get-started">Getting Started</a></li>      
       <li><a href="#how-does-it-work">How Does It Work</a></li>
-      <ul>
-        <li><a href="#connect-db">Connect To Your Database</a></li>      
-        <li><a href="#generate-code">Generate Your GraphQL Code</a></li>     
-        <li><a href="#export-code">Export Code</a></li>     
-        <li><a href="#visualize">Visualize Your Code</a></li>     
-      </ul>
+         <ul>
+            <li><a href="#connect-to-your-database">Connect To Your Database</a></li>      
+            <li><a href="#generate-your-graphql-code">Generate Your GraphQL Code</a></li>     
+            <li><a href="#export-your-graphql-code">Export Code</a></li>     
+            <li><a href="#Visualize-your-GraphQL-schema">Visualize Your Code</a></li>     
+            </ul>
       <li><a href="#developers">Developers</a></li>
-      <ul>
+         <ul>
             <li><a href="#built-with">Built With</a></li>     
             <li><a href="#project-setup">Project Setup</a></li> 
-                  </ul>
+         </ul>
     <li><a href="#contributors">Contributors</a></li>
     <li><a href="#license">License</a></li>
   </ol>
@@ -85,7 +85,7 @@ Visit <a class="nav-link" href="https://GQLevated.com/">https://GQLevated.com</a
 </br>
 
 <!-- CONNECT DB -->
-## Connect to your database
+### Connect to your database
 
 Enter your PostgreSQL or MongoDB connection string and connect to your database.
 Don’t have a connection string but still want to see how it works? No problem! 
@@ -98,7 +98,7 @@ Connect to our PostgresQL Sample Database and see GQLevated in action.
 
 <!-- GENERATE CODE -->
 
-## Generate your GraphQL code
+### Generate your GraphQL code
 
 With one simple click of a button GQLevated connects to your database, parses the data and generates the corresponding GraphQL code for you. This production-ready GraphQL code includes server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. It is displayed for you in an easy to reason about way and ready to be injected into your own application.
 
@@ -110,7 +110,7 @@ With one simple click of a button GQLevated connects to your database, parses th
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- EXPORT CODE -->
-## Export your GraphQL code
+### Export your GraphQL code
 
 In addition to copying and pasting the newly generated GraphQL code straight from the browser display, users also have the option to export their customized GraphQL code as individual JavaScript files. Simply click on the ‘Export Code‘ button in the corresponding container of the code that you wish to download.
 
@@ -179,7 +179,7 @@ Required software for setting up this application:
 
 <!-- CONTRIBUTORS -->
 
-## GQLevated Contributors
+## Contributors
 
 [John Alicastro](https://www.linkedin.com/in/johnalicastro) [@JohnAlicastro](https://github.com/JohnAlicastro)
 
