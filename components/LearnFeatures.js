@@ -39,6 +39,7 @@ function LearnFeatures() {
 
   return( 
   <div className={styles.learn} id='learn'>
+    <Spacer y={3}/>
     <div className={styles.overview}>
       <br></br>
       <h1 className={styles.headers}>What can GQLevated do for you?</h1>

@@ -7,10 +7,10 @@ import styles from '../styles/Nav.module.css';
 function GQLevated() {
   return (
     <div className={styles.gql}>
-    <Link href='/'> 
+      <Link href='/'> 
       <Image src={GQLevatedLogo} width={300} height={90} alt='logo-gif' />
       </Link>
-      </div>
+    </div>
   );
 }
 
