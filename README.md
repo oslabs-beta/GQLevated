@@ -8,7 +8,7 @@
 -->
 
 <!-- GQLevated -->
-<div  align="center">
+<div id="top" align="center">
 <img src='./public/GQLevatedWordMarkSlogan.svg'>
 <br/>
 <!-- PROJECT SHIELDS -->
@@ -20,6 +20,8 @@
 [![MIT License][license-shield]][license-url]
 
 </div>
+
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -205,7 +207,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/oslabs-beta/GQLevated/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/oslabs-beta/GQLevated/LICENSE) file for details.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
