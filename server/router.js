@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getSQLTables, getSQLDBname, prepForGQL } = require('./controllers/SQLController');
-const { connectToMongo } = require('./controllers/MongoDBController');
+const { connectToMongo, getMongoDocuments, MongoPrepForGQL } = require('./controllers/MongoDBController');
 const { convertToGQLServerCode } = require('./controllers/GQLServerController');
 const { convertToGQLClientQueriesCode, convertToGQLClientMutationsCode } = require('./controllers/GQLClientController');
 
@@ -25,6 +25,8 @@ router.get(
     // console.log('this is res.locals.GQLClientMutationsCode', res.locals.GQLClientMutationsCode);
 
     const GQLCode = {
+      DBName: res.locals.DBname,
+      SQLSchema: res.locals.SQLSchema,
       GQLServerCode: res.locals.GQLServerCode,
       GQLClientQueriesCode: res.locals.GQLClientQueriesCode,
       GQLClientMutationsCode: res.locals.GQLClientMutationsCode,
@@ -49,6 +51,8 @@ router.post(
     // console.log('this is res.locals.GQLClientMutationsCode', res.locals.GQLClientMutationsCode);
 
     const GQLCode = {
+      DBName: res.locals.DBname,
+      SQLSchema: res.locals.SQLSchema,
       GQLServerCode: res.locals.GQLServerCode,
       GQLClientQueriesCode: res.locals.GQLClientQueriesCode,
       GQLClientMutationsCode: res.locals.GQLClientMutationsCode,
@@ -61,12 +65,11 @@ router.post(
 router.post(
   '/convert-mongo-db',
   connectToMongo,
-  // getSQLDBname,
-  // getSQLTables,
-  // prepForGQL,
-  // convertToGQLServerCode,
-  // convertToGQLClientQueriesCode,
-  // convertToGQLClientMutationsCode,
+  getMongoDocuments,
+  MongoPrepForGQL,
+  convertToGQLServerCode,
+  convertToGQLClientQueriesCode,
+  convertToGQLClientMutationsCode,
   (req, res) => {
     // console.log('this is res.locals', res.locals);
     // console.log('this is res.locals.GQLServerCode', res.locals.GQLServerCode);
@@ -74,12 +77,14 @@ router.post(
     // console.log('this is res.locals.GQLClientMutationsCode', res.locals.GQLClientMutationsCode);
 
     const GQLCode = {
+      DBName: res.locals.DBname,
+      MongoSchema: res.locals.MongoSchema,
       GQLServerCode: res.locals.GQLServerCode,
       GQLClientQueriesCode: res.locals.GQLClientQueriesCode,
       GQLClientMutationsCode: res.locals.GQLClientMutationsCode,
     };
     // res.status(200).json(GQLCode);
-    res.status(200).json(res.locals.MongoData);
+    res.status(200).json(GQLCode);
   }
 );
 

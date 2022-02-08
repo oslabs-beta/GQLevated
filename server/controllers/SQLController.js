@@ -61,7 +61,7 @@ Controller.getSQLTables = (req, res, next) => {
         log: `ERROR in server middleware @ getSQLTables: ${err}`,
         status: 400,
         message: {
-          err: 'Unable to connect to SQL database, please confirm URI',
+          err: 'Unable to connect to PostgreSQL Database Please enter a valid Connection String',
         },
       };
       return next(errObj);
@@ -122,7 +122,7 @@ Controller.prepForGQL = (req, res, next) => {
       log: `Error caught in server middleware @ prepForGQL: ${error}`,
       status: 400,
       message: {
-        err: 'Unable to prep for GQL conversion',
+        err: 'Unable to prep SQLSchema for GQL conversion',
       },
     };
     return next(errObj);
