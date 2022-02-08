@@ -34,7 +34,7 @@ function Hero() {
       <h1>GQLevated</h1>
       <Spacer y={0.5} />
       <h2>Elevate your projects with seamless GraphQL integration</h2>
-      <Spacer y={3} />
+      {/* <Spacer y={3} /> */}
       <Link href='/#learn'>
         <button className='hvr-wobble-vertical'> Learn More </button>
       </Link>
