@@ -1,30 +1,15 @@
 const { Pool } = require('pg');
-const CryptoJS = require('crypto-js');
-
 const fs = require('fs');
 const SQLDBAllTablesQuery = fs.readFileSync('server/SQLDBAllTablesQuery.sql', 'utf8');
-const secretKey = require('../secretKey');
-
-/* DEMO DB URI */
-const DEMO_PG_URI = 'postgres://zopukfce:9HtnUz7qn0mkyXDet_HCqe9-qXjbAZx1@ruby.db.elephantsql.com/zopukfce';
 
 const Controller = {};
 
-/* FUNC TO DECRYPT USER PG URI SENT FROM FRONT-END */
-const userURIDecrypted = (encryptedUserURI) => {
-  const data = CryptoJS.AES.decrypt(encryptedUserURI, secretKey);
-  const decryptedURI = data.toString(CryptoJS.enc.Utf8);
-  return decryptedURI;
-};
-
-/* GET DB NAME */
+/* CONNECT TO POSTGRESQL AND GET DB NAME MIDDLEWARE */
 Controller.getSQLDBname = (req, res, next) => {
-  let PSQL_URI;
-
-  // if user URI in req.body.link, call userURIDecrypted to decrypt, otherwise use demo URI
-  req.body.link ? (PSQL_URI = userURIDecrypted(req.body.link)) : (PSQL_URI = DEMO_PG_URI);
+  const PSQL_URI = res.locals.userURIDecrypted;
 
   const db = new Pool({ connectionString: PSQL_URI });
+
   db.query('SELECT current_database();')
     .then((data) => {
       res.locals.DBname = data.rows[0].current_database;
@@ -42,17 +27,14 @@ Controller.getSQLDBname = (req, res, next) => {
     });
 };
 
-/* GET DB TABLES */
+/* CONNECT TO POSTGRESQL AND GET DB TABLES MIDDLEWARE */
 Controller.getSQLTables = (req, res, next) => {
-  let PSQL_URI;
-
-  // if user URI in req.body.link, call userURIDecrypted to decrypt, otherwise use demo URI
-  req.body.link ? (PSQL_URI = userURIDecrypted(req.body.link)) : (PSQL_URI = DEMO_PG_URI);
+  const PSQL_URI = res.locals.userURIDecrypted;
 
   const db = new Pool({ connectionString: PSQL_URI });
+
   db.query(SQLDBAllTablesQuery)
     .then((data) => {
-      // res.locals.SQLSchema = data.rows[0].tables;
       res.locals.SQLSchema = data.rows[0];
       return next();
     })
@@ -68,9 +50,8 @@ Controller.getSQLTables = (req, res, next) => {
     });
 };
 
-/* CONVERT DB INFO TO GQLServerController READABLE OBJECT */
+/* CONVERT POSTGRESQL DB INFO TO GQLServerController READABLE OBJECT MIDDLEWARE */
 Controller.prepForGQL = (req, res, next) => {
-  // console.log('fuck yeah! lets go');
   try {
     res.locals.preppedForGQL = {
       0: {
@@ -89,7 +70,6 @@ Controller.prepForGQL = (req, res, next) => {
     for (const table in tables) {
       let tableCache = (res.locals.preppedForGQL[0].tables[tableCount] = { type: table, fields: {} });
 
-      // console.log(tables[table].columns);
       const tableFields = tables[table].columns;
 
       /* LOOP THROUGH FIELDS OF TABLE AND POPULATE res.locals.preppedForGQL WITH APPROPRIATE DATA */
@@ -115,7 +95,7 @@ Controller.prepForGQL = (req, res, next) => {
       fieldCount = 0;
       tableCount++;
     }
-    // console.log('this is it', res.locals.preppedForGQL[0].tables[2].fields);
+
     return next();
   } catch (error) {
     const errObj = {

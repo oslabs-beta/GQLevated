@@ -1,42 +1,27 @@
 const mongoose = require('mongoose');
-const CryptoJS = require('crypto-js');
 const { MongoClient } = require('mongodb');
-const secretKey = require('../secretKey');
-
-/* FUNC TO DECRYPT USER PG URI SENT FROM FRONT-END */
-const userURIDecrypted = (encryptedUserURI) => {
-  const data = CryptoJS.AES.decrypt(encryptedUserURI, secretKey);
-  const decryptedURI = data.toString(CryptoJS.enc.Utf8);
-  return decryptedURI;
-};
 
 const Controller = {};
 
-/* CONNECT TO MONGO AND GET COLLECTION NAMES */
+/* CONNECT TO MONGO AND GET COLLECTION NAMES MIDDLEWARE */
 Controller.connectToMongo = async (req, res, next) => {
-  let MONGO_URI;
-  // req.body.link ? (MONGO_URI = userURIDecrypted(req.body.link)) : (MONGO_URI = DEMO_MONGO_URI);
-  MONGO_URI = userURIDecrypted(req.body.link);
+  const MONGO_URI = res.locals.userURIDecrypted;
 
   try {
     const db = mongoose.connect(MONGO_URI);
-    console.log('Connected to MongoDB...');
+    // console.log('Connected to MongoDB...');
 
     const collectionNames = [];
 
-    /* GET COLLECTIONS NAMES FROM MONGODB - THIS WORKS */
+    /* GET COLLECTIONS NAMES FROM MONGODB */
     await mongoose.connection.on('open', function () {
       mongoose.connection.db.listCollections().toArray(function (err, names) {
         if (err) {
           console.log(err);
         } else {
-          /* GET MONGODB NAME */
-          // console.log(mongoose.connection.db.namespace);
+          /* GET MONGODB NAMES */
           res.locals.DBname = mongoose.connection.db.namespace;
-          // console.log(names);
-          // names.forEach((el) => console.log(el.name));
           names.forEach((el) => collectionNames.push(el.name));
-          // console.log('CollectionNames are', collectionNames);
           res.locals.collectionNames = collectionNames;
           mongoose.connection.close();
           return next();
@@ -55,32 +40,21 @@ Controller.connectToMongo = async (req, res, next) => {
   }
 };
 
-/* GET MONGO DOCUMENTS FOR EACH COLLECTION NAME */
+/* GET MONGO DOCUMENTS FOR EACH COLLECTION NAME MIDDLEWARE */
 Controller.getMongoDocuments = async (req, res, next) => {
-  let MONGO_URI;
-  // req.body.link ? (MONGO_URI = userURIDecrypted(req.body.link)) : (MONGO_URI = DEMO_MONGO_URI);
-  MONGO_URI = req.body.link;
+  const MONGO_URI = res.locals.userURIDecrypted;
 
   // Mongo Databse Name
   const MONGO_NAME = res.locals.DBname;
   // Array of collections names
   const collectionNames = res.locals.collectionNames;
 
-  console.log(MONGO_NAME);
-  console.log(collectionNames);
-
   try {
     const client = new MongoClient(MONGO_URI);
 
     await client.connect();
-    console.log('Connected to MongoDB...');
+    // console.log('Connected to MongoDB...');
     const db = client.db(MONGO_NAME);
-
-    // TEST TO GRAB DOCUMENTS FROM PEOPLE //
-    // const collection = db.collection('people');
-    // const findDocuments = await collection.find({}).toArray();
-    // console.log('FOUND DOCUMENTS =>', findDocuments);
-    // GOT TO HERE
 
     /* CREATE MONGO SCHEMA FROM DB */
     const MongoSchema = { tables: {} };
@@ -103,10 +77,7 @@ Controller.getMongoDocuments = async (req, res, next) => {
       }
     }
 
-    // console.log(MongoSchema);
-    // console.log(MongoSchema.tables.people.columns);
     res.locals.MongoSchema = MongoSchema;
-
     return next();
   } catch (error) {
     const errObj = {
@@ -120,7 +91,7 @@ Controller.getMongoDocuments = async (req, res, next) => {
   }
 };
 
-/* CONVERT MONGODB INFO TO GQLServerController READABLE OBJECT */
+/* CONVERT MONGODB INFO TO GQLServerController READABLE OBJECT MIDDLEWARE */
 Controller.MongoPrepForGQL = (req, res, next) => {
   try {
     res.locals.preppedForGQL = {
@@ -140,7 +111,6 @@ Controller.MongoPrepForGQL = (req, res, next) => {
     for (const table in tables) {
       let tableCache = (res.locals.preppedForGQL[0].tables[tableCount] = { type: table, fields: {} });
 
-      // console.log(tables[table].columns);
       const tableFields = tables[table].columns;
 
       /* LOOP THROUGH FIELDS OF TABLE AND POPULATE res.locals.preppedForGQL WITH APPROPRIATE DATA */
@@ -166,7 +136,7 @@ Controller.MongoPrepForGQL = (req, res, next) => {
       fieldCount = 0;
       tableCount++;
     }
-    // console.log('this is it', res.locals.preppedForGQL[0].tables[2].fields);
+
     return next();
   } catch (error) {
     const errObj = {
@@ -179,4 +149,5 @@ Controller.MongoPrepForGQL = (req, res, next) => {
     return next(errObj);
   }
 };
+
 module.exports = Controller;
