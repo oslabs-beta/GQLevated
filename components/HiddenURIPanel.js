@@ -31,7 +31,6 @@ function HiddenURIPanel({ showPanel }) {
       panelRef.current.style.backgroundColor = 'var(--secondary-color)';
       panelRef.current.style.opacity = '0.5';
     } else {
-      console.log('panel.current', panelRef.current);
       panelRef.current.style.boxShadow = '';
       panelRef.current.style.backgroundColor = '';
     }

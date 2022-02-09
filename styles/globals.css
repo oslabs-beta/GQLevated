@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 :root {
   margin-top: 3%;
   --primary-color: white;
@@ -5,6 +7,7 @@
   --gradient-color: rgba(21, 5, 194, 0.845);
   --primary-text: white;
   --dark-text: #000000;
+  font-family: Montserrat, sans-serif;
   /* --dark-theme: #121212; */
   --dark-theme: rgba(18, 18, 18, 0.6);
 }
@@ -13,11 +16,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   box-sizing: border-box;
   color: var(--primary-color);
   /* background-color: var(--dark-theme); */
 }
+
 
 a {
   color: var(--primary-color);
@@ -83,6 +87,7 @@ li {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+
 .hover:hover:before,
 .hover:focus:before,
 .hover:active:before {
@@ -172,7 +177,7 @@ li {
 /* Modal Overlay */
 
 .modal-overlay {
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   top: 0;
   right: 0;
@@ -182,6 +187,8 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .modal {
@@ -189,4 +196,10 @@ li {
   /* width: min-content; */
   opacity: 0.7;
   height: min-content;
+}
+
+.flow-modal {
+  height: 80vh;
+  width: 80vw;
+  background-color: white;
 }

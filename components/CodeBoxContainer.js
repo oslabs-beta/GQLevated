@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-// import { fs } from 'fs';
+import React from 'react';
 import FileSaver, { saveAs } from 'file-saver';
 import { useSelector } from 'react-redux';
-import styles from '../styles/CodeBoxContainer.module.css';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import nightOwl from '../node_modules/react-syntax-highlighter/dist/esm/styles/hljs/night-owl';
-import qtCreator from '../node_modules/react-syntax-highlighter/dist/esm/styles/hljs/qtcreator_dark';
 import { Spacer, Button } from '@nextui-org/react';
+import qtCreator from '../node_modules/react-syntax-highlighter/dist/esm/styles/hljs/qtcreator_dark';
+
+import styles from '../styles/CodeBoxContainer.module.css';
 import { SampleGQLServerCode, SampleGQLClientQueriesCode, SampleGQLClientMutationsCode } from '../server/sampleDB';
 
 function CodeBoxContainer() {
