@@ -171,7 +171,7 @@ Required software for setting up this application:
    ```sh
    npm install
    ```
-3. The application can be run in development mode by running the following command and going to http://localhost:8080/ on your browser.
+3. The application can be run in development mode by running the following command and going to http://localhost:3000/ on your browser.
 
    ```sh
    npm run dev
@@ -207,7 +207,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/oslabs-beta/GQLevated/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/oslabs-beta/GQLevated/blob/main/LICENSE) file for details.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

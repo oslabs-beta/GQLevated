@@ -1,4 +1,5 @@
 .team {
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,7 +13,8 @@
   transform: scale(0.9);
 }
 
-.cardHeader {
+.card {
   display: flex;
   justify-content: center;
 }
+

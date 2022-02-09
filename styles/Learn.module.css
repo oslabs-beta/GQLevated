@@ -4,6 +4,7 @@
   justify-content: flex-start;
   height: 100vh;
   width: 100%;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   background-color: var(--dark-theme);
 }
 
@@ -13,13 +14,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   /* background-color: var(--dark-theme); */
 }
 
 .features {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   height: 550px;
   margin-top: 5rem;
   margin-bottom: 10rem;
@@ -59,8 +61,8 @@ box-shadow: 0px 0px 10px #aaa9a9; */
 }
 
 .featureDescription {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
-  font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 0.05em;
 }
 
@@ -71,6 +73,7 @@ box-shadow: 0px 0px 10px #aaa9a9; */
 .headers{
   text-align: center;
   /* margin-left: 3rem; */
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   
 
 }
