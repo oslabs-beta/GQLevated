@@ -17,7 +17,15 @@ Controller.connectToMongo = async (req, res, next) => {
     await mongoose.connection.on('open', function () {
       mongoose.connection.db.listCollections().toArray(function (err, names) {
         if (err) {
-          console.log(err);
+          // console.log(err);
+          const errObj = {
+            log: `Error caught in server middleware @ connectToMongo: ${error}`,
+            status: 400,
+            message: {
+              err: 'Unable to connect to MongoDB Database Please enter a valid Connection String / make sure your IP Adress has access',
+            },
+          };
+          return next(errObj);
         } else {
           /* GET MONGODB NAMES */
           res.locals.DBname = mongoose.connection.db.namespace;

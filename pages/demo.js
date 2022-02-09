@@ -24,10 +24,12 @@ function Demo() {
     return () => {
       dispatch(setQueries(''));
       dispatch(showDemo(false));
+      dispatch(setIsError(false));
     };
   }, []);
 
   const fetchData = (uri) => {
+    // fetch('http://localhost:8080/convert-mongo-db', {
     fetch('http://localhost:8080/convert-sql-db', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -39,8 +41,8 @@ function Demo() {
           dispatch(setIsError(true));
           dispatch(setErrorMsg(data.err));
         } else {
-          // console.log('data', data);
-          createNodes(data.SQLSchema);
+          console.log('data', data);
+          // createNodes(data.SQLSchema);
           dispatch(setShowLoader(true));
           setTimeout(() => {
             dispatch(setShowLoader(false));
@@ -50,6 +52,7 @@ function Demo() {
         }
       })
       .catch(async (err) => {
+        console.log('err', err);
         dispatch(setShowLoader(false));
         dispatch(setErrorMsg(err));
         dispatch(setIsError(true));
