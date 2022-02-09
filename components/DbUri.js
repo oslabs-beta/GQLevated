@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
-import styles from '../styles/DbUri.module.css';
 import { Input, Spacer, Button } from '@nextui-org/react';
-import { useDispatch } from 'react-redux';
-import { setQueries, showDemo } from '../features/demoSlice';
 import CryptoJS from 'crypto-js';
+
+import styles from '../styles/DbUri.module.css';
+import { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowFlowModal } from '../features/demoSlice';
 import secretKey from '../server/secretKey';
 
 const easing = [0.83, 0, 0.17, 1];
@@ -30,17 +31,21 @@ const fadeInRight = {
   },
 };
 
-function DbUri({ hidePanel, fetchData, isError, errorMsg, setIsError, setLoader }) {
+function DbUri({ hidePanel, fetchData, setLoader }) {
   const uriField = useRef();
   const dispatch = useDispatch();
+  const isError = useSelector((state) => state.demo.isError);
+  const errorMsg = useSelector((state) => state.demo.errorMsg);
 
   const handleClick = (e) => {
     const URILink = uriField.current.value;
     e.preventDefault();
     if (URILink.length > 0) {
-      const encryptedURL = CryptoJS.AES.encrypt(URILink, secretKey).toString();
-
+      const encryptedURL = CryptoJS.AES.encrypt(URILink, secretKey).toString(); //Encrypting user-inputted DB URI string
       fetchData(encryptedURL);
+    } else {
+      dispatch(setErrorMsg('Please Enter a URI string'));
+      dispatch(setIsError(true));
     }
   };
 
@@ -72,16 +77,18 @@ function DbUri({ hidePanel, fetchData, isError, errorMsg, setIsError, setLoader 
             size='sm'
             css={{ px: '$14' }}
             onClick={(e) => {
-              setLoader(true);
               dispatch(setQueries(''));
-              handleClick(e);
               dispatch(showDemo(false));
-              setIsError(false);
+              dispatch(setIsError(false));
+              handleClick(e);
             }}
           >
             Submit
           </Button>
         </div>
+
+        <Button onClick={() => dispatch(setShowFlowModal(true))}>Visualize Schema</Button>
+
         <div className={styles.sampledb}>
           <h2>See how it works with our Sample Database </h2>
           <Spacer y={1.5} />
@@ -93,13 +100,12 @@ function DbUri({ hidePanel, fetchData, isError, errorMsg, setIsError, setLoader 
             size='sm'
             css={{ px: '$10' }}
             onClick={() => {
-              setIsError(false);
+              dispatch(setIsError(false));
               dispatch(showDemo(false)); //update showDemo state in redux
-              // setQueryData('');
               dispatch(setQueries(''));
-              setLoader(true);
+              dispatch(setShowLoader(true));
               setTimeout(() => {
-                setLoader(false);
+                dispatch(setShowLoader(false));
                 dispatch(showDemo(true)); //update showDemo state in redux
                 hidePanel();
               }, 700);
