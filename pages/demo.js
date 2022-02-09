@@ -14,6 +14,7 @@ import styles from '../styles/Demo.module.css';
 
 function Demo() {
   const [showURIPanel, setShowURIPanel] = useState(true);
+  const [flowModalData, setFlowModalData] = useState();
 
   const showLoader = useSelector((state) => state.demo.showLoader);
   const showFlowModal = useSelector((state) => state.demo.showFlowModal);
@@ -28,9 +29,9 @@ function Demo() {
     };
   }, []);
 
-  const fetchData = (uri) => {
+  const fetchData = (uri, endpoint) => {
     // fetch('http://localhost:8080/convert-mongo-db', {
-    fetch('http://localhost:8080/convert-sql-db', {
+    fetch(`http://localhost:8080/${endpoint}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ link: uri }),
@@ -42,7 +43,8 @@ function Demo() {
           dispatch(setErrorMsg(data.err));
         } else {
           console.log('data', data);
-          // createNodes(data.SQLSchema);
+          setFlowModalData(null);
+          setFlowModalData(data.SQLSchema);
           dispatch(setShowLoader(true));
           setTimeout(() => {
             dispatch(setShowLoader(false));
@@ -59,8 +61,6 @@ function Demo() {
       });
   };
 
-  const createFlowNodes = () => {};
-
   return (
     <div className={styles.wrapper}>
       <Head>
@@ -75,7 +75,7 @@ function Demo() {
 
       <CodeBoxContainer />
       {showLoader && <Loader />}
-      {showFlowModal && <FlowModal />}
+      {showFlowModal && <FlowModal data={flowModalData} />}
     </div>
   );
 }

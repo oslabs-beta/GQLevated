@@ -31,6 +31,14 @@ const fadeInRight = {
   },
 };
 
+const checkEndpoint = (URILink) => {
+  const mongodbURI = 'convert-mongo-db';
+  const sqlURI = 'convert-sql-db';
+
+  if (URILink.includes('postgres://')) return sqlURI;
+  if (URILink.includes('mongodb+srv://')) return mongodbURI;
+};
+
 function DbUri({ hidePanel, fetchData, setLoader }) {
   const uriField = useRef();
   const dispatch = useDispatch();
@@ -41,8 +49,9 @@ function DbUri({ hidePanel, fetchData, setLoader }) {
     const URILink = uriField.current.value;
     e.preventDefault();
     if (URILink.length > 0) {
+      const fetchEndpoint = checkEndpoint(URILink);
       const encryptedURL = CryptoJS.AES.encrypt(URILink, secretKey).toString(); //Encrypting user-inputted DB URI string
-      fetchData(encryptedURL);
+      fetchData(encryptedURL, fetchEndpoint);
     } else {
       dispatch(setErrorMsg('Please Enter a URI string'));
       dispatch(setIsError(true));
