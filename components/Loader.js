@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+
 import GQLLogo from '../public/LOGO.svg';
 import Image from 'next/image';
 

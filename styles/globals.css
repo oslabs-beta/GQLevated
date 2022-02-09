@@ -172,7 +172,7 @@ li {
 /* Modal Overlay */
 
 .modal-overlay {
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   top: 0;
   right: 0;
@@ -182,6 +182,8 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .modal {
@@ -189,4 +191,10 @@ li {
   /* width: min-content; */
   opacity: 0.7;
   height: min-content;
+}
+
+.flow-modal {
+  height: 80vh;
+  width: 80vw;
+  background-color: white;
 }
