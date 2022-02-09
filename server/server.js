@@ -1,19 +1,32 @@
 const express = require('express');
 const router = require('./router');
 const cors = require('cors');
+const compression = require('compression');
 
 const app = express();
 const PORT = 8080;
 
+/* CORS OPTIONS */
 const corsOptions = {
   origin: '*',
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
 
+/* COMPRESSION FILTER */
+const shouldCompress = (req, res) => {
+  if (req.headers['x-no-compression']) {
+    // don't compress responses with this request header
+    return false;
+  }
+  // fallback to standard filter function
+  return compression.filter(req, res);
+};
+
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(compression({ filter: shouldCompress }));
 
 app.use('/', router);
 
