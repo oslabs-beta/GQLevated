@@ -1,13 +1,12 @@
 import React from 'react';
-import styles from '../styles/Hero.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import GQLLogo from '../public/LOGO.svg';
 import { motion } from 'framer-motion';
 import { Spacer } from '@nextui-org/react';
-import { useSelector } from 'react-redux';
 
-// const easing = [0.13, 0, 0.17, 1];
+import styles from '../styles/Hero.module.css';
+import GQLLogo from '../public/LOGO.svg';
+
 const easing = [0.17, 0.67, 0.84, 0.66];
 
 const rotate = {
@@ -21,10 +20,6 @@ const rotate = {
 };
 
 function Hero() {
-  const showDemoState = useSelector((state) => state.demo.showDemo);
-  const HandleLearnMore = () => {};
-
-  console.log(showDemoState);
   return (
     <div className={styles.hero}>
       <motion.div variants={rotate} animate='initial'>
@@ -34,7 +29,7 @@ function Hero() {
       <h1>GQLevated</h1>
       <Spacer y={0.5} />
       <h2>Elevate your projects with seamless GraphQL integration</h2>
-      {/* <Spacer y={3} /> */}
+
       <Link href='/#learn'>
         <button className='hvr-wobble-vertical'> Learn More </button>
       </Link>

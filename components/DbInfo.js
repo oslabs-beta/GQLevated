@@ -6,7 +6,6 @@ import { setQueries, showDemo, setIsError, setShowDBInfo, setShowFlowModal } fro
 import styles from '../styles/DbInfo.module.css';
 
 function DbInfo({ dbData, hidePanel, setDbData }) {
-  console.log('dbData', dbData);
   const [dbName, setDBName] = useState(!dbData ? 'Sample Database' : dbData.name);
   const [dbType, setDBType] = useState(!dbData ? 'PostgreSQL' : dbData.type);
 

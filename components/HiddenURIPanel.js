@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+
 import styles from '../styles/HiddenURIPanel.module.css';
 
 const easing = [0.83, 0, 0.17, 1];
@@ -16,7 +17,6 @@ const fadeInLeft = {
       delay: 10,
       type: 'bounce',
       duration: 1.0,
-      // ease: easing,
     },
   },
 };

@@ -12,8 +12,6 @@ Controller.connectToMongo = async (req, res, next) => {
 
     /* CONNECT TO MONGO DB, TRY FOR 5 SECONDS */
     await mongoose.connect(MONGO_URI, { serverSelectionTimeoutMS: 5000 }).then(() => {
-      // console.log('inside mongoose connect on');
-
       /* GET MONGODB COLLECTION NAMES */
       mongoose.connection.db.listCollections().toArray(function (err, names) {
         if (err) {
@@ -35,31 +33,6 @@ Controller.connectToMongo = async (req, res, next) => {
         }
       });
     });
-
-    /* GET COLLECTIONS NAMES FROM MONGODB */
-    // await mongoose.connection.on('open', function () {
-    //   console.log('inside mongoose connect on');
-    //   mongoose.connection.db.listCollections().toArray(function (err, names) {
-    //     if (err) {
-    //       // console.log(err);
-    //       const errObj = {
-    //         log: `Error caught in server middleware @ connectToMongo: ${err}`,
-    //         status: 400,
-    //         message: {
-    //           err: 'Unable to get collection names from Mongo DB',
-    //         },
-    //       };
-    //       return next(errObj);
-    //     } else {
-    //       /* GET MONGODB NAMES */
-    //       res.locals.DBname = mongoose.connection.db.namespace;
-    //       names.forEach((el) => collectionNames.push(el.name));
-    //       res.locals.collectionNames = collectionNames;
-    //       // mongoose.connection.close();
-    //       return next();
-    //     }
-    //   });
-    // });
   } catch (error) {
     const errObj = {
       log: `Error caught in server middleware @ connectToMongo: ${error}`,

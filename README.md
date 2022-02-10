@@ -21,7 +21,6 @@
 
 </div>
 
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -48,9 +47,8 @@
 
 </br>
 
-
-
 <!-- ABOUT -->
+
 ## About GQLevated
 
 [GQLevated](https://GQLevated.dev) is an open source GraphQL prototyping tool. Our Web Hosted Development Tool supplies users with customized, production-ready GraphQL code including server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. This allows developers to spend more time solving problems and less time tediously writing GraphQL code, thus ELEVATING the project as a whole. Here is a [medium]() article describing the inspiration behind GQLevated.
@@ -72,6 +70,7 @@ However, making the switch to GraphQL on a project that utilizes relational data
 </br>
 
  <!-- Lets Get Started -->
+
 ## Let's Get Started
 
 Visit <a class="nav-link" href="https://GQLevated.dev/">https://GQLevated.dev</a> to launch our web hosted tool.
@@ -83,15 +82,19 @@ Visit <a class="nav-link" href="https://GQLevated.dev/">https://GQLevated.dev</a
 <p align="right">(<a href="#top">back to top</a>)</p>
 
  <!-- HOW DOES IT WORK -->
+
 ## How Does It Work?
+
 </br>
 
 <!-- CONNECT DB -->
+
 ### Connect to your database
 
 Enter your PostgreSQL or MongoDB connection string and connect to your database.
-Don’t have a connection string but still want to see how it works? No problem! 
+Don’t have a connection string but still want to see how it works? No problem!
 Connect to our PostgresQL Sample Database and see GQLevated in action.
+
 <div  align="center">
 <img src='./public/home1.gif'>
 </div>
@@ -104,7 +107,6 @@ Connect to our PostgresQL Sample Database and see GQLevated in action.
 
 With one simple click of a button GQLevated connects to your database, parses the data and generates the corresponding GraphQL code for you. This production-ready GraphQL code includes server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. It is displayed for you in an easy to reason about way and ready to be injected into your own application.
 
-
 <div  align="center">
 <img src='./public/home2.gif'>
 </div>
@@ -112,6 +114,7 @@ With one simple click of a button GQLevated connects to your database, parses th
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- EXPORT CODE -->
+
 ### Export your GraphQL code
 
 In addition to copying and pasting the newly generated GraphQL code straight from the browser display, users also have the option to export their customized GraphQL code as individual JavaScript files. Simply click on the ‘Export Code‘ button in the corresponding container of the code that you wish to download.
@@ -121,6 +124,7 @@ In addition to copying and pasting the newly generated GraphQL code straight fro
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- VISUALIZE -->
+
 ## Visualize your databases
 
 After generating their GraphQL Code, users will have the option to visualize and interact with their PostgreSQL or MongoDB databases!
@@ -129,12 +133,12 @@ After generating their GraphQL Code, users will have the option to visualize and
 <br />
 <br />
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Developers
 
 This section describes the instructions for developers who would like to download and contribute to the open-source GQLevated project.
+
 ### Built With
 
 The GQLevated application was built using the following frameworks/libraries:
@@ -145,7 +149,7 @@ The GQLevated application was built using the following frameworks/libraries:
 - [Typescript](https://www.typescriptlang.org/)
 - [GraphQL](https://graphql.org/)
 - [Apollo](https://www.apollographql.com/)
-- [NodeJS](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
@@ -164,7 +168,7 @@ The GQLevated application was built using the following frameworks/libraries:
 
 Required software for setting up this application:
 
-- [NodeJS](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/)
 - [NPM ](https://www.npmjs.com/)
 
 1. Clone the repo.
@@ -195,7 +199,6 @@ Required software for setting up this application:
 [Nicholas Gonzalez](https://www.linkedin.com/in/nicholasagonzalez/) [@Nikootz](https://github.com/Nikootz)
 
 [Quyen Calixto](https://www.linkedin.com/in/quyencalixto/) [@QtieCoder](https://github.com/QtieCoder)
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

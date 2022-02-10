@@ -7,7 +7,6 @@ const initialStateValue = {
   errorMsg: '',
   showLoader: false,
   showFlowModal: false,
-  fetchConn: '',
   showDBInfo: false,
 };
 

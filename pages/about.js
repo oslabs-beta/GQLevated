@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
-import Nav from '../components/Nav';
+
 import Team from '../components/Team';
 
 function About() {
@@ -16,4 +16,3 @@ function About() {
 }
 
 export default About;
-

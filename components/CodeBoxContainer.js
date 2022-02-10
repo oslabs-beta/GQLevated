@@ -1,10 +1,10 @@
 import React from 'react';
-import FileSaver, { saveAs } from 'file-saver';
+import { saveAs } from 'file-saver';
 import { useSelector } from 'react-redux';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { Spacer, Button } from '@nextui-org/react';
-import qtCreator from '../node_modules/react-syntax-highlighter/dist/esm/styles/hljs/qtcreator_dark';
+import { Button } from '@nextui-org/react';
 
+import qtCreator from '../node_modules/react-syntax-highlighter/dist/esm/styles/hljs/qtcreator_dark';
 import styles from '../styles/CodeBoxContainer.module.css';
 import { SampleGQLServerCode, SampleGQLClientQueriesCode, SampleGQLClientMutationsCode } from '../server/sampleDB';
 

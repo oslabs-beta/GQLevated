@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Input, Spacer, Button } from '@nextui-org/react';
 
 import DbInput from '../components/DbInput';
 import DbInfo from '../components/DbInfo';
 import styles from '../styles/DbUri.module.css';
-import { SQLSchema } from '../server/sampleDB';
-import { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowFlowModal } from '../features/demoSlice';
-import secretKey from '../server/secretKey';
-import { useEffect } from 'react';
 
 const easing = [0.83, 0, 0.17, 1];
 
@@ -36,7 +31,6 @@ const fadeInRight = {
 
 function DbUri({ hidePanel, fetchData, dbData, setDbData }) {
   const showDBInfo = useSelector((state) => state.demo.showDBInfo);
-  const showDemo = useSelector((state) => state.demo.showDemo);
 
   return (
     <AnimatePresence exitBeforeEnter>

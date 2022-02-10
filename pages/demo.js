@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { motion } from 'framer-motion';
 import Head from 'next/head';
 
 import { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowDBInfo } from '../features/demoSlice';
@@ -49,7 +48,6 @@ function Demo() {
         } else {
           // Successful Fetch Request
           setFlowModalData(null);
-          console.log(data);
 
           if (endpoint === 'convert-mongo-db') {
             setDbData({
@@ -74,7 +72,6 @@ function Demo() {
         }
       })
       .catch(async (err) => {
-        console.log('err', err);
         dispatch(setShowLoader(false));
         dispatch(setErrorMsg(err));
         dispatch(setIsError(true));
