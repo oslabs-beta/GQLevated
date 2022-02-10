@@ -32,7 +32,7 @@ function Demo() {
   const fetchData = (uri, endpoint) => {
     dispatch(setShowLoader(true));
 
-    fetch(`/api/${endpoint}`, {
+    fetch(`/pages/api/${endpoint}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ link: uri }),
