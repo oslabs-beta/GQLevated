@@ -3,8 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 
-import { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader } from '../features/demoSlice';
-import createNodes from '../utils/createNodes';
+import { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowDBInfo } from '../features/demoSlice';
 import DbUri from '../components/DbUri';
 import Loader from '../components/Loader';
 import FlowModal from '../components/flowModal';
@@ -15,6 +14,7 @@ import styles from '../styles/Demo.module.css';
 function Demo() {
   const [showURIPanel, setShowURIPanel] = useState(true);
   const [flowModalData, setFlowModalData] = useState();
+  const [dbData, setDbData] = useState();
 
   const showLoader = useSelector((state) => state.demo.showLoader);
   const showFlowModal = useSelector((state) => state.demo.showFlowModal);
@@ -26,6 +26,7 @@ function Demo() {
       dispatch(setQueries(''));
       dispatch(showDemo(false));
       dispatch(setIsError(false));
+      dispatch(setShowDBInfo(false));
     };
   }, []);
 
@@ -46,13 +47,29 @@ function Demo() {
             dispatch(setErrorMsg(data.err));
           }, 550);
         } else {
+          // Successful Fetch Request
           setFlowModalData(null);
-          setFlowModalData(data.SQLSchema);
-          // dispatch(setShowLoader(true));
+          console.log(data);
+
+          if (endpoint === 'convert-mongo-db') {
+            setDbData({
+              name: data.DBName,
+              type: 'MongoDB',
+              data: data.MongoSchema,
+            });
+            setFlowModalData(data.MongoSchema);
+          } else if (endpoint === 'convert-sql-db') {
+            setDbData({
+              name: data.DBName,
+              type: 'PostgreSQL',
+              data: data.SQLSchema,
+            });
+            setFlowModalData(data.SQLSchema);
+          }
           setTimeout(() => {
             dispatch(setShowLoader(false));
+            dispatch(setShowDBInfo(true));
             dispatch(setQueries(data));
-            setShowURIPanel(false);
           }, 550);
         }
       })
@@ -71,7 +88,7 @@ function Demo() {
         <meta property='og:title' content='GQLevated' key='title' />
       </Head>
       {showURIPanel ? (
-        <DbUri fetchData={fetchData} setLoader={setShowLoader} hidePanel={() => setShowURIPanel(false)} />
+        <DbUri fetchData={fetchData} setLoader={setShowLoader} dbData={dbData} hidePanel={() => setShowURIPanel(false)} />
       ) : (
         <HiddenURIPanel showPanel={() => setShowURIPanel(true)} />
       )}

@@ -8,7 +8,7 @@ const initialStateValue = {
   showLoader: false,
   showFlowModal: false,
   fetchConn: '',
-  flowElements: [],
+  showDBInfo: false,
 };
 
 //REDUCERS
@@ -17,7 +17,6 @@ export const demoSlice = createSlice({
   initialState: initialStateValue,
   reducers: {
     setQueries: (state, action) => {
-      // console.log("action.payload", action.payload);
       state.queries = action.payload;
     },
     showDemo: (state, action) => {
@@ -35,12 +34,12 @@ export const demoSlice = createSlice({
     setShowFlowModal: (state, action) => {
       state.showFlowModal = action.payload;
     },
-    setFlowElements: (state, action) => {
-      state.flowElements = action.payload;
+    setShowDBInfo: (state, action) => {
+      state.showDBInfo = action.payload;
     },
   },
 });
 
-export const { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowFlowModal, setFlowElements } = demoSlice.actions;
+export const { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowFlowModal, setFlowElements, setShowDBInfo } = demoSlice.actions;
 
 export default demoSlice.reducer;

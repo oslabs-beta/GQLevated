@@ -1,0 +1,24 @@
+.type {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 0.5rem 0;
+}
+
+.paragraphs {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /* align-content: space-around; */
+  justify-content: flex-start;
+  height: 100vh;
+}
