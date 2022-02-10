@@ -1,6 +1,11 @@
-{
+{ 
+  "version": 2,
+  "name": "gqlevated",
   "builds": [
     { "src": "script.js", "use": "@vercel/node" }
   ],
-    "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+    "routes": [
+      { "src": "/(.*)", "dest": "pages/api/index.js" }
+    ]
+
   }
