@@ -18,7 +18,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  /* align-content: space-around; */
   justify-content: flex-start;
   height: 100vh;
 }

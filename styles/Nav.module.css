@@ -16,17 +16,11 @@
 
 .ul {
   display: flex;
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
-  /* width: 100%; */
   align-items: center;
-  /* height: 2rem; */
   color: var(--dark-text);
 }
 
 .current {
-  /* display: flex; */
-  /* height: 1.9rem; */
   border-bottom: 3px solid var(--secondary-color);
   cursor: pointer;
   font-size: 1.75rem;

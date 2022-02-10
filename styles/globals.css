@@ -8,7 +8,6 @@
   --primary-text: white;
   --dark-text: #000000;
   font-family: Montserrat, sans-serif;
-  /* --dark-theme: #121212; */
   --dark-theme: rgba(18, 18, 18, 0.6);
 }
 
@@ -19,9 +18,7 @@ body {
   font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   box-sizing: border-box;
   color: var(--primary-color);
-  /* background-color: var(--dark-theme); */
 }
-
 
 a {
   color: var(--primary-color);

@@ -1,7 +1,6 @@
 .panel {
   min-height: 85vh;
   width: 2rem;
-  /* box-shadow: 0 10px 10px var(--secondary-color); */
   position: fixed;
   left: 0;
   z-index: 1000;

@@ -1,12 +1,12 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+
 import styles from '../styles/GitHubStar.module.css';
 import LinkedInLogo from '../public/Linkedin-logo-on-transparent-Background-PNG-.png';
 import GitHubLogo from '../public/GitHub-Mark-64px.png';
 import GitHubButton from 'react-github-btn';
 import GraphqlLogo from '../public/graphql2.png';
-import MediumLogo from '../public/medium-monogram-480.png'
+import MediumLogo from '../public/medium-monogram-480.png';
 
 function GitHubStar() {
   return (
