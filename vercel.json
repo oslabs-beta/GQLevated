@@ -1,4 +1,6 @@
 {
-   
+  "builds": [
+    { "src": "script.js", "use": "@vercel/node" }
+  ],
     "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
   }
