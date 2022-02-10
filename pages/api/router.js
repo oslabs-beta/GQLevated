@@ -8,13 +8,13 @@ const { connectToMongo, getMongoDocuments, MongoPrepForGQL } = require('./contro
 const { convertToGQLServerCode } = require('./controllers/GQLServerController');
 const { convertToGQLClientQueriesCode, convertToGQLClientMutationsCode } = require('./controllers/GQLClientController');
 
-router.get('/', (req, res) => {
+router.get('/api', (req, res) => {
   res.status(200).send('HELLO FROM THE BACKEND!');
 });
 
 /* ROUTE TO GET DEMO POSTGRESQL DB AND CONVERT TO GRAPHQL SERVER, CLIENT QUERIES AND MUTATIONS CODE */
 router.get(
-  '/convert-demo-db',
+  '/api/convert-demo-db',
   decryptURI,
   getSQLDBname,
   getSQLTables,
@@ -36,7 +36,7 @@ router.get(
 
 /* ROUTE TO GET USER POSTGRESQL DB AND CONVERT TO GRAPHQL SERVER, CLIENT QUERIES AND MUTATIONS CODE */
 router.post(
-  '/convert-sql-db',
+  '/api/convert-sql-db',
   decryptURI,
   getSQLDBname,
   getSQLTables,
@@ -58,7 +58,7 @@ router.post(
 
 /* ROUTE TO GET USER MONGO DB AND CONVERT TO GRAPHQL SERVER, CLIENT QUERIES AND MUTATIONS CODE */
 router.post(
-  '/convert-mongo-db',
+  '/api/convert-mongo-db',
   decryptURI,
   connectToMongo,
   getMongoDocuments,
