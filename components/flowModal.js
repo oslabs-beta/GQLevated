@@ -3,7 +3,7 @@ import ReactFlow, { Background, Controls, Handle, Position } from 'react-flow-re
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setShowFlowModal } from '../features/demoSlice';
-import { SQLSchema } from '../server/sampleDB';
+import { SQLSchema } from '../pages/api/sampleDB';
 
 function flowModal({ data }) {
   const dispatch = useDispatch();

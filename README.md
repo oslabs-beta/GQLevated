@@ -93,7 +93,7 @@ Visit <a class="nav-link" href="https://GQLevated.dev/">https://GQLevated.dev</a
 
 Enter your PostgreSQL or MongoDB connection string and connect to your database.
 Don’t have a connection string but still want to see how it works? No problem!
-Connect to our PostgresQL Sample Database and see GQLevated in action.
+Connect to our PostgreSQL Sample Database and see GQLevated in action.
 
 <div  align="center">
 <img src='./public/home1.gif'>

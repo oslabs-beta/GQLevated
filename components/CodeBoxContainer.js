@@ -6,7 +6,7 @@ import { Button } from '@nextui-org/react';
 
 import qtCreator from '../node_modules/react-syntax-highlighter/dist/esm/styles/hljs/qtcreator_dark';
 import styles from '../styles/CodeBoxContainer.module.css';
-import { SampleGQLServerCode, SampleGQLClientQueriesCode, SampleGQLClientMutationsCode } from '../server/sampleDB';
+import { SampleGQLServerCode, SampleGQLClientQueriesCode, SampleGQLClientMutationsCode } from '../pages/api/sampleDB';
 
 function CodeBoxContainer() {
   const showDemo = useSelector((state) => state.demo.showDemo);

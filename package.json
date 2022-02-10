@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next dev & nodemon server/server.js",
+    "dev": "next dev & nodemon pages/api/index.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

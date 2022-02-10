@@ -5,7 +5,7 @@ import CryptoJS from 'crypto-js';
 
 import { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowDBInfo } from '../features/demoSlice';
 import styles from '../styles/DbUri.module.css';
-import secretKey from '../server/secretKey';
+import secretKey from '../pages/api/secretKey';
 
 function DbInput({ fetchData }) {
   const uriField = useRef();
