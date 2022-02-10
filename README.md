@@ -129,7 +129,7 @@ In addition to copying and pasting the newly generated GraphQL code straight fro
 
 After generating their GraphQL Code, users will have the option to visualize and interact with their PostgreSQL or MongoDB databases!
 
-<img src='./public/visualplaceholder.jpeg'>
+<img src='./public/home4.gif'>
 <br />
 <br />
 
@@ -184,6 +184,11 @@ Required software for setting up this application:
 
    ```sh
    npm run dev
+   ```
+4. Unit testing can be run by the following command:
+
+   ```sh
+   npm test
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>

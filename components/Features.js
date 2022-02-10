@@ -5,7 +5,7 @@ import styles from '../styles/Learn.module.css';
 import DbInput from '../public/home1.gif';
 import GQLCode from '../public/home2.gif';
 import ExportCode from '../public/home3.gif';
-import Visualize from '../public/visualplaceholder.jpeg';
+import Visualize from '../public/home4.gif';
 
 function Features({ index, title, description }) {
   if (index === 0) {
