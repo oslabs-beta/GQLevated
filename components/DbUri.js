@@ -34,22 +34,14 @@ const fadeInRight = {
   },
 };
 
-function DbUri({ hidePanel, fetchData, dbData }) {
+function DbUri({ hidePanel, fetchData, dbData, setDbData }) {
   const showDBInfo = useSelector((state) => state.demo.showDBInfo);
   const showDemo = useSelector((state) => state.demo.showDemo);
-
-  const [data, setData] = useState(dbData);
-
-  useEffect(() => {
-    if (showDemo) {
-      dbData = SQLSchema;
-    }
-  }, [showDemo]);
 
   return (
     <AnimatePresence exitBeforeEnter>
       <motion.div variants={fadeInRight} initial='initial' exit='exit' animate='initial' className={styles.container}>
-        {showDBInfo ? <DbInfo dbData={dbData} hidePanel={hidePanel} /> : <DbInput fetchData={fetchData} />}
+        {showDBInfo ? <DbInfo dbData={dbData} hidePanel={hidePanel} setDbData={setDbData} /> : <DbInput fetchData={fetchData} />}
       </motion.div>
     </AnimatePresence>
   );

@@ -88,7 +88,7 @@ function Demo() {
         <meta property='og:title' content='GQLevated' key='title' />
       </Head>
       {showURIPanel ? (
-        <DbUri fetchData={fetchData} setLoader={setShowLoader} dbData={dbData} hidePanel={() => setShowURIPanel(false)} />
+        <DbUri fetchData={fetchData} setLoader={setShowLoader} dbData={dbData} setDbData={setDbData} hidePanel={() => setShowURIPanel(false)} />
       ) : (
         <HiddenURIPanel showPanel={() => setShowURIPanel(true)} />
       )}

@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setQueries, showDemo, setIsError, setShowDBInfo, setShowFlowModal } from '../features/demoSlice';
 import styles from '../styles/DbInfo.module.css';
 
-function DbInfo({ dbData, hidePanel }) {
+function DbInfo({ dbData, hidePanel, setDbData }) {
   console.log('dbData', dbData);
-  const [dbName, setDBName] = useState(dbData.name);
-  const [dbType, setDBType] = useState(dbData.type);
+  const [dbName, setDBName] = useState(!dbData ? 'Sample Database' : dbData.name);
+  const [dbType, setDBType] = useState(!dbData ? 'PostgreSQL' : dbData.type);
 
   const dispatch = useDispatch();
 
@@ -26,6 +26,7 @@ function DbInfo({ dbData, hidePanel }) {
           dispatch(showDemo(false));
           dispatch(setIsError(false));
           dispatch(setShowDBInfo(false));
+          setDbData(null);
         }}
       >
         Reset

@@ -14,6 +14,7 @@ function DbInput({ fetchData }) {
   const dispatch = useDispatch();
 
   const handleClick = async (e) => {
+    dispatch(showDemo(false));
     const URILink = uriField.current.value;
     e.preventDefault();
 
@@ -68,7 +69,6 @@ function DbInput({ fetchData }) {
           css={{ px: '$14' }}
           onClick={(e) => {
             dispatch(setQueries(''));
-            dispatch(showDemo(false));
             dispatch(setIsError(false));
             dispatch(setErrorMsg(''));
             handleClick(e);
@@ -95,8 +95,8 @@ function DbInput({ fetchData }) {
             dispatch(setShowLoader(true));
             setTimeout(() => {
               dispatch(setShowLoader(false));
-              // dispatch(setShowDBInfo(true));
               dispatch(showDemo(true)); //update showDemo state in redux
+              dispatch(setShowDBInfo(true));
             }, 700);
           }}
         >
