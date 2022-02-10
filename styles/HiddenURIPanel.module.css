@@ -1,9 +1,0 @@
-.panel {
-  min-height: 85vh;
-  width: 2rem;
-  position: fixed;
-  left: 0;
-  z-index: 1000;
-  cursor: pointer;
-  transform: translateX(-0.5rem);
-}

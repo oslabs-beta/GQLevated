@@ -1,6 +1,6 @@
 const { Pool } = require('pg');
 const fs = require('fs');
-const SQLDBAllTablesQuery = fs.readFileSync('server/SQLDBAllTablesQuery.sql', 'utf8');
+const SQLDBAllTablesQuery = fs.readFileSync('../SQLDBAllTablesQuery.sql', 'utf8');
 
 const Controller = {};
 

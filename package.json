@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next dev & nodemon server/server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "node index.js",
     "lint": "next lint",
     "test": "jest"
 
