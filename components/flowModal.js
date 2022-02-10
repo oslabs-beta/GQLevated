@@ -12,7 +12,6 @@ function flowModal({ data }) {
 
   if (showDemo) flowData = SQLSchema;
 
-  console.log('flowData', flowData);
   const elements = [];
   const tables = flowData.tables;
 
@@ -84,7 +83,6 @@ function flowModal({ data }) {
   return (
     <div className='modal-overlay' onClick={() => dispatch(setShowFlowModal(false))}>
       <div className='flow-modal' onClick={(event) => event.stopPropagation()}>
-        {console.log('elements', elements)}
         <ReactFlow elements={elements} nodeTypes={nodeTypes} defaultZoom={0.5}>
           <Background style={{ backgroundColor: '#1E1E1E' }} gap={12} size={0.5} color='#121212' />
           <Controls />
