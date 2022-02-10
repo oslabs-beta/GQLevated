@@ -6,6 +6,7 @@ import LinkedInLogo from '../public/Linkedin-logo-on-transparent-Background-PNG-
 import GitHubLogo from '../public/GitHub-Mark-64px.png';
 import GitHubButton from 'react-github-btn';
 import GraphqlLogo from '../public/graphql2.png';
+import MediumLogo from '../public/medium-monogram-480.png'
 
 function GitHubStar() {
   return (
@@ -14,6 +15,11 @@ function GitHubStar() {
         <a href='https://graphql.org/' target='_blank' rel='noreferrer noopener'>
           <li className={styles.listgqllogo}>
             <Image src={GraphqlLogo} width={50} height={50} alt='logo-gif' />
+          </li>
+        </a>
+        <a href='https://medium/' target='_blank' rel='noreferrer noopener'>
+          <li className={styles.listitem}>
+            <Image src={MediumLogo} width={45} height={45} alt='logo-gif' />
           </li>
         </a>
         <a href='https://www.linkedin.com/company/gqlevated' target='_blank' rel='noreferrer noopener'>

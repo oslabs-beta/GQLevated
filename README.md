@@ -53,7 +53,7 @@
 <!-- ABOUT -->
 ## About GQLevated
 
-[GQLevated](http://www.GQLevated.com) is an open source GraphQL prototyping tool. Our Web Development Tool supplies users with customized production-ready GraphQL code including server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. This allows developers to spend more time solving problems and less time tediously writing GraphQL code, thus ELEVATING the project as a whole.
+[GQLevated](https://GQLevated.dev) is an open source GraphQL prototyping tool. Our Web Hosted Development Tool supplies users with customized, production-ready GraphQL code including server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. This allows developers to spend more time solving problems and less time tediously writing GraphQL code, thus ELEVATING the project as a whole. Here is a [medium]() article describing the inspiration behind GQLevated.
 
 And it’s free to use for everyone - no need to create an account!
 
@@ -74,7 +74,7 @@ However, making the switch to GraphQL on a project that utilizes relational data
  <!-- Lets Get Started -->
 ## Let's Get Started
 
-Visit <a class="nav-link" href="https://GQLevated.com/">https://GQLevated.com</a> to launch our web hosted tool.
+Visit <a class="nav-link" href="https://GQLevated.dev/">https://GQLevated.dev</a> to launch our web hosted tool.
 
 - Click the Learn More Button on our landing page to learn what GQLevated can do.
 - Click the Use GQLevated to start using our tool.
@@ -121,9 +121,9 @@ In addition to copying and pasting the newly generated GraphQL code straight fro
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- VISUALIZE -->
-## Visualize your GraphQL schema
+## Visualize your databases
 
-COMING SOON - Visualize and interact with your database relationships!
+After generating their GraphQL Code, users will have the option to visualize and interact with their PostgreSQL or MongoDB databases!
 
 <img src='./public/visualplaceholder.jpeg'>
 <br />
@@ -142,15 +142,20 @@ The GQLevated application was built using the following frameworks/libraries:
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Typescript](https://www.typescriptlang.org/)
 - [GraphQL](https://graphql.org/)
 - [Apollo](https://www.apollographql.com/)
 - [NodeJS](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
+- [PostgreSQL](https://postgresql.org/)
+- [ReactFlow](https://reactflow.dev/)
 - [NextUI](https://nextui.org/)
 - [FramerMotion](https://www.framer.com/motion/)
 - [ReactSyntaxHighlighter](https://www.npmjs.com/package/react-syntax-highlighter)
+- [Jest](https://jestjs.io/)
+- [Supertest](https://www.npmjs.com/package/supertest)
 - [Crypto.js](https://cryptojs.gitbook.io/docs/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -187,7 +192,7 @@ Required software for setting up this application:
 
 [Johnson Che](https://www.linkedin.com/in/JohnsonChe/) [@JohnsonChe](https://github.com/JohnsonChe)
 
-[Nicholas Gonzalez](https://www.linkedin.com/in/nicholas-gonzalez-036b1751/) [@Nikootz](https://github.com/Nikootz)
+[Nicholas Gonzalez](https://www.linkedin.com/in/nicholasagonzalez/) [@Nikootz](https://github.com/Nikootz)
 
 [Quyen Calixto](https://www.linkedin.com/in/quyencalixto/) [@QtieCoder](https://github.com/QtieCoder)
 

@@ -44,7 +44,7 @@ function LearnFeatures() {
       <br></br>
       <h1 className={styles.headers}>What can GQLevated do for you?</h1>
       <br></br>
-      <p>Our Web Development Tool supplies users with customized production-ready GraphQL code including server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. This allows developers to spend more time solving problems and less time tediously writing GraphQL code, thus ELEVATING the project as a whole.
+      <p>Our Web Development Tool supplies users with customized, production-ready GraphQL code including server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. This allows developers to spend more time solving problems and less time tediously writing GraphQL code, thus ELEVATING the project as a whole.
       <br></br>
       <br></br>
       And it’s free to use for everyone - no need to create an account!
