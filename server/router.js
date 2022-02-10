@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { decryptURI } = require('./controllers/CryptoJSController');
+// const { decryptURI } = require('./controllers/CryptoJSController.ts');
+
 const { getSQLTables, getSQLDBname, prepForGQL } = require('./controllers/SQLController');
 const { connectToMongo, getMongoDocuments, MongoPrepForGQL } = require('./controllers/MongoDBController');
 const { convertToGQLServerCode } = require('./controllers/GQLServerController');
