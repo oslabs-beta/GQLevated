@@ -1,11 +1,15 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
-import styles from '../styles/DbUri.module.css';
 import { Input, Spacer, Button } from '@nextui-org/react';
-import { useDispatch } from 'react-redux';
-import { setQueries, showDemo } from '../features/demoSlice';
-import CryptoJS from 'crypto-js';
+
+import DbInput from '../components/DbInput';
+import DbInfo from '../components/DbInfo';
+import styles from '../styles/DbUri.module.css';
+import { SQLSchema } from '../server/sampleDB';
+import { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowFlowModal } from '../features/demoSlice';
 import secretKey from '../server/secretKey';
+import { useEffect } from 'react';
 
 const easing = [0.83, 0, 0.17, 1];
 
@@ -30,84 +34,14 @@ const fadeInRight = {
   },
 };
 
-function DbUri({ hidePanel, fetchData, isError, errorMsg, setIsError, setLoader }) {
-  const uriField = useRef();
-  const dispatch = useDispatch();
-
-  const handleClick = (e) => {
-    const URILink = uriField.current.value;
-    e.preventDefault();
-    if (URILink.length > 0) {
-      const encryptedURL = CryptoJS.AES.encrypt(URILink, secretKey).toString();
-
-      fetchData(encryptedURL);
-    }
-  };
+function DbUri({ hidePanel, fetchData, dbData, setDbData }) {
+  const showDBInfo = useSelector((state) => state.demo.showDBInfo);
+  const showDemo = useSelector((state) => state.demo.showDemo);
 
   return (
     <AnimatePresence exitBeforeEnter>
       <motion.div variants={fadeInRight} initial='initial' exit='exit' animate='initial' className={styles.container}>
-        <div className={styles.uriString}>
-          <h2>Elevate your project with seamless GraphQL integration</h2>
-          <Spacer y={1.5} />
-          <Input
-            clearable
-            bordered
-            width='20rem'
-            labelPlaceholder='PostgreSQL URI'
-            initialValue=''
-            ref={uriField}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') handleClick(e);
-            }}
-          />
-          <Spacer y={1.5} />
-          {isError ? <span className={styles.error}>{errorMsg}</span> : null}
-          <Spacer y={1.5} />
-          <Button
-            auto
-            clickable={true}
-            color='default'
-            rounded='false'
-            size='sm'
-            css={{ px: '$14' }}
-            onClick={(e) => {
-              setLoader(true);
-              dispatch(setQueries(''));
-              handleClick(e);
-              dispatch(showDemo(false));
-              setIsError(false);
-            }}
-          >
-            Submit
-          </Button>
-        </div>
-        <div className={styles.sampledb}>
-          <h2>See how it works with our Sample Database </h2>
-          <Spacer y={1.5} />
-          <Button
-            auto
-            clickable={true}
-            color='default'
-            rounded='false'
-            size='sm'
-            css={{ px: '$10' }}
-            onClick={() => {
-              setIsError(false);
-              dispatch(showDemo(false)); //update showDemo state in redux
-              // setQueryData('');
-              dispatch(setQueries(''));
-              setLoader(true);
-              setTimeout(() => {
-                setLoader(false);
-                dispatch(showDemo(true)); //update showDemo state in redux
-                hidePanel();
-              }, 700);
-            }}
-          >
-            Sample Database
-          </Button>
-        </div>
+        {showDBInfo ? <DbInfo dbData={dbData} hidePanel={hidePanel} setDbData={setDbData} /> : <DbInput fetchData={fetchData} />}
       </motion.div>
     </AnimatePresence>
   );

@@ -2,13 +2,13 @@
   /* min-height: 95vh; */
   height: 85vh;
   /* min-width: 20rem; */
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   width: min-content;
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
+  /* align-content: flex-start; */
   /* align-items: flex-start; */
-  justify-content: center;
+  /* justify-content: flex-start; */
   margin-right: 2rem;
   color: var(--primary-text);
 

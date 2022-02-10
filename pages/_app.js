@@ -4,6 +4,7 @@ import { store } from '../store';
 import { Provider } from 'react-redux';
 import '../styles/globals.css';
 
+
 const theme = createTheme({
   type: 'dark',
   theme: {

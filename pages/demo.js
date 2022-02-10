@@ -1,31 +1,39 @@
-import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
-import { useDispatch } from 'react-redux';
-import { setQueries, showDemo } from '../features/demoSlice';
+import Head from 'next/head';
+
+import { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowDBInfo } from '../features/demoSlice';
 import DbUri from '../components/DbUri';
 import Loader from '../components/Loader';
+import FlowModal from '../components/flowModal';
 import CodeBoxContainer from '../components/CodeBoxContainer';
 import HiddenURIPanel from '../components/HiddenURIPanel';
 import styles from '../styles/Demo.module.css';
 
 function Demo() {
   const [showURIPanel, setShowURIPanel] = useState(true);
-  const [errorMsg, setErrorMsg] = useState('');
-  const [isError, setIsError] = useState(false);
-  const [showLoader, setShowLoader] = useState(false);
+  const [flowModalData, setFlowModalData] = useState();
+  const [dbData, setDbData] = useState();
 
+  const showLoader = useSelector((state) => state.demo.showLoader);
+  const showFlowModal = useSelector((state) => state.demo.showFlowModal);
   const dispatch = useDispatch();
 
+  //On Demo load, clear queries and demo flag
   useEffect(() => {
     return () => {
       dispatch(setQueries(''));
       dispatch(showDemo(false));
+      dispatch(setIsError(false));
+      dispatch(setShowDBInfo(false));
     };
   }, []);
 
-  const fetchData = (uri) => {
-    fetch('http://localhost:8080/convert-sql-db', {
+  const fetchData = (uri, endpoint) => {
+    dispatch(setShowLoader(true));
+
+    fetch(`http://localhost:8080/${endpoint}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ link: uri }),
@@ -33,27 +41,44 @@ function Demo() {
       .then((res) => res.json())
       .then(async (data) => {
         if (data.err) {
-          await delayLoader();
-          setIsError(true);
-          setErrorMsg(data.err);
-          console.log(data.err);
+          setTimeout(() => {
+            dispatch(setShowLoader(false));
+            dispatch(setIsError(true));
+            dispatch(setErrorMsg(data.err));
+          }, 550);
         } else {
-          await delayLoader();
-          dispatch(setQueries(data));
-          setShowURIPanel(false);
+          // Successful Fetch Request
+          setFlowModalData(null);
+          console.log(data);
+
+          if (endpoint === 'convert-mongo-db') {
+            setDbData({
+              name: data.DBName,
+              type: 'MongoDB',
+              data: data.MongoSchema,
+            });
+            setFlowModalData(data.MongoSchema);
+          } else if (endpoint === 'convert-sql-db') {
+            setDbData({
+              name: data.DBName,
+              type: 'PostgreSQL',
+              data: data.SQLSchema,
+            });
+            setFlowModalData(data.SQLSchema);
+          }
+          setTimeout(() => {
+            dispatch(setShowLoader(false));
+            dispatch(setShowDBInfo(true));
+            dispatch(setQueries(data));
+          }, 550);
         }
       })
       .catch(async (err) => {
-        await delayLoader();
-        setErrorMsg(err);
-        setIsError(true);
+        console.log('err', err);
+        dispatch(setShowLoader(false));
+        dispatch(setErrorMsg(err));
+        dispatch(setIsError(true));
       });
-  };
-
-  const delayLoader = () => {
-    setTimeout(() => {
-      setShowLoader(false);
-    }, 700);
   };
 
   return (
@@ -63,20 +88,14 @@ function Demo() {
         <meta property='og:title' content='GQLevated' key='title' />
       </Head>
       {showURIPanel ? (
-        <DbUri
-          isError={isError}
-          errorMsg={errorMsg}
-          setIsError={setIsError}
-          fetchData={fetchData}
-          setLoader={setShowLoader}
-          hidePanel={() => setShowURIPanel(false)}
-        />
+        <DbUri fetchData={fetchData} setLoader={setShowLoader} dbData={dbData} setDbData={setDbData} hidePanel={() => setShowURIPanel(false)} />
       ) : (
         <HiddenURIPanel showPanel={() => setShowURIPanel(true)} />
       )}
 
       <CodeBoxContainer />
       {showLoader && <Loader />}
+      {showFlowModal && <FlowModal data={flowModalData} />}
     </div>
   );
 }

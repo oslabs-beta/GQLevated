@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
   height: 90vh;
   width: 100%;
 }
@@ -13,7 +14,7 @@
 .hero h1 {
   font-size: 7rem;
   color: var(--primary-color);
-  font-family: 'Montserrat', sans-serif;
+
 }
 
 

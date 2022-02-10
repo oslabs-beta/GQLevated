@@ -7,4 +7,303 @@ export const SampleGQLClientQueriesCode =
 export const SampleGQLClientMutationsCode =
   "import { gql } from 'apollo-boost';\n\nconst addregionsMutation = gql`\n  mutation($region_name: character varying) {\n    addregions(region_name: $region_name) {\n      region_id\n      region_name\n    }\n  }\n`\n\nconst updateregionsMutation = gql`\n  mutation($region_id: Number!, $region_name: character varying) {\n    updateregions(region_id: $region_id, region_name: $region_name) {\n      region_id\n      region_name\n    }\n  }\n`\n\nconst deleteregionsMutation = gql`\n  mutation($region_id: Number!){\n    deleteregions(region_id: $region_id){\n      region_id\n      region_name\n    }\n  }\n`\n\nconst addcountriesMutation = gql`\n  mutation($country_name: character varying, $country_id: character) {\n    addcountries(country_name: $country_name, country_id: $country_id) {\n      region_id\n      country_name\n      country_id\n    }\n  }\n`\n\nconst updatecountriesMutation = gql`\n  mutation($region_id: Number!, $country_name: character varying, $country_id: character) {\n    updatecountries(region_id: $region_id, country_name: $country_name, country_id: $country_id) {\n      region_id\n      country_name\n      country_id\n    }\n  }\n`\n\nconst deletecountriesMutation = gql`\n  mutation($region_id: Number!){\n    deletecountries(region_id: $region_id){\n      region_id\n      country_name\n      country_id\n    }\n  }\n`\n\nconst addlocationsMutation = gql`\n  mutation($country_id: character, $state_province: character varying, $city: character varying, $postal_code: character varying, $street_address: character varying) {\n    addlocations(country_id: $country_id, state_province: $state_province, city: $city, postal_code: $postal_code, street_address: $street_address) {\n      location_id\n      country_id\n      state_province\n      city\n      postal_code\n      street_address\n    }\n  }\n`\n\nconst updatelocationsMutation = gql`\n  mutation($location_id: Number!, $country_id: character, $state_province: character varying, $city: character varying, $postal_code: character varying, $street_address: character varying) {\n    updatelocations(location_id: $location_id, country_id: $country_id, state_province: $state_province, city: $city, postal_code: $postal_code, street_address: $street_address) {\n      location_id\n      country_id\n      state_province\n      city\n      postal_code\n      street_address\n    }\n  }\n`\n\nconst deletelocationsMutation = gql`\n  mutation($location_id: Number!){\n    deletelocations(location_id: $location_id){\n      location_id\n      country_id\n      state_province\n      city\n      postal_code\n      street_address\n    }\n  }\n`\n\nconst adddepartmentsMutation = gql`\n  mutation($department_id: Int, $department_name: character varying) {\n    adddepartments(department_id: $department_id, department_name: $department_name) {\n      location_id\n      department_id\n      department_name\n    }\n  }\n`\n\nconst updatedepartmentsMutation = gql`\n  mutation($location_id: Number!, $department_id: Int, $department_name: character varying) {\n    updatedepartments(location_id: $location_id, department_id: $department_id, department_name: $department_name) {\n      location_id\n      department_id\n      department_name\n    }\n  }\n`\n\nconst deletedepartmentsMutation = gql`\n  mutation($location_id: Number!){\n    deletedepartments(location_id: $location_id){\n      location_id\n      department_id\n      department_name\n    }\n  }\n`\n\nconst addjobsMutation = gql`\n  mutation($job_title: character varying, $min_salary: numeric, $job_id: Int) {\n    addjobs(job_title: $job_title, min_salary: $min_salary, job_id: $job_id) {\n      max_salary\n      job_title\n      min_salary\n      job_id\n    }\n  }\n`\n\nconst updatejobsMutation = gql`\n  mutation($max_salary: numeric!, $job_title: character varying, $min_salary: numeric, $job_id: Int) {\n    updatejobs(max_salary: $max_salary, job_title: $job_title, min_salary: $min_salary, job_id: $job_id) {\n      max_salary\n      job_title\n      min_salary\n      job_id\n    }\n  }\n`\n\nconst deletejobsMutation = gql`\n  mutation($max_salary: numeric!){\n    deletejobs(max_salary: $max_salary){\n      max_salary\n      job_title\n      min_salary\n      job_id\n    }\n  }\n`\n\nconst addemployeesMutation = gql`\n  mutation($hire_date: date, $job_id: Int, $salary: numeric, $employee_id: Int, $department_id: Int, $manager_id: Int, $first_name: character varying, $last_name: character varying, $phone_number: character varying) {\n    addemployees(hire_date: $hire_date, job_id: $job_id, salary: $salary, employee_id: $employee_id, department_id: $department_id, manager_id: $manager_id, first_name: $first_name, last_name: $last_name, phone_number: $phone_number) {\n      email\n      hire_date\n      job_id\n      salary\n      employee_id\n      department_id\n      manager_id\n      first_name\n      last_name\n      phone_number\n    }\n  }\n`\n\nconst updateemployeesMutation = gql`\n  mutation($email: character varying!, $hire_date: date, $job_id: Int, $salary: numeric, $employee_id: Int, $department_id: Int, $manager_id: Int, $first_name: character varying, $last_name: character varying, $phone_number: character varying) {\n    updateemployees(email: $email, hire_date: $hire_date, job_id: $job_id, salary: $salary, employee_id: $employee_id, department_id: $department_id, manager_id: $manager_id, first_name: $first_name, last_name: $last_name, phone_number: $phone_number) {\n      email\n      hire_date\n      job_id\n      salary\n      employee_id\n      department_id\n      manager_id\n      first_name\n      last_name\n      phone_number\n    }\n  }\n`\n\nconst deleteemployeesMutation = gql`\n  mutation($email: character varying!){\n    deleteemployees(email: $email){\n      email\n      hire_date\n      job_id\n      salary\n      employee_id\n      department_id\n      manager_id\n      first_name\n      last_name\n      phone_number\n    }\n  }\n`\n\nconst adddependentsMutation = gql`\n  mutation($dependent_id: Int, $relationship: character varying, $last_name: character varying, $employee_id: Int) {\n    adddependents(dependent_id: $dependent_id, relationship: $relationship, last_name: $last_name, employee_id: $employee_id) {\n      first_name\n      dependent_id\n      relationship\n      last_name\n      employee_id\n    }\n  }\n`\n\nconst updatedependentsMutation = gql`\n  mutation($first_name: character varying!, $dependent_id: Int, $relationship: character varying, $last_name: character varying, $employee_id: Int) {\n    updatedependents(first_name: $first_name, dependent_id: $dependent_id, relationship: $relationship, last_name: $last_name, employee_id: $employee_id) {\n      first_name\n      dependent_id\n      relationship\n      last_name\n      employee_id\n    }\n  }\n`\n\nconst deletedependentsMutation = gql`\n  mutation($first_name: character varying!){\n    deletedependents(first_name: $first_name){\n      first_name\n      dependent_id\n      relationship\n      last_name\n      employee_id\n    }\n  }\n`\n\nexport {\n  addregionsMutation,\n  updateregionsMutation,\n  deleteregionsMutation,\n  addcountriesMutation,\n  updatecountriesMutation,\n  deletecountriesMutation,\n  addlocationsMutation,\n  updatelocationsMutation,\n  deletelocationsMutation,\n  adddepartmentsMutation,\n  updatedepartmentsMutation,\n  deletedepartmentsMutation,\n  addjobsMutation,\n  updatejobsMutation,\n  deletejobsMutation,\n  addemployeesMutation,\n  updateemployeesMutation,\n  deleteemployeesMutation,\n  adddependentsMutation,\n  updatedependentsMutation,\n  deletedependentsMutation,\n};";
 
+export const SQLSchema = {
+  name: 'Sample Database',
+  tables: {
+    regions: {
+      primaryKey: 'region_id',
+      foreignKeys: null,
+      referencedBy: {
+        countries: 'region_id',
+      },
+      columns: {
+        region_id: {
+          dataType: 'integer',
+          columnDefault: "nextval('regions_region_id_seq'::regclass)",
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+        region_name: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 25,
+          isNullable: 'YES',
+        },
+      },
+    },
+    countries: {
+      primaryKey: 'country_id',
+      foreignKeys: {
+        region_id: {
+          referenceTable: 'regions',
+          referenceKey: 'region_id',
+        },
+      },
+      referencedBy: {
+        locations: 'country_id',
+      },
+      columns: {
+        region_id: {
+          dataType: 'integer',
+          columnDefault: null,
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+        country_name: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 40,
+          isNullable: 'YES',
+        },
+        country_id: {
+          dataType: 'character',
+          columnDefault: null,
+          charMaxLength: 2,
+          isNullable: 'NO',
+        },
+      },
+    },
+    locations: {
+      primaryKey: 'location_id',
+      foreignKeys: {
+        country_id: {
+          referenceTable: 'countries',
+          referenceKey: 'country_id',
+        },
+      },
+      referencedBy: {
+        departments: 'location_id',
+      },
+      columns: {
+        location_id: {
+          dataType: 'integer',
+          columnDefault: "nextval('locations_location_id_seq'::regclass)",
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+        country_id: {
+          dataType: 'character',
+          columnDefault: null,
+          charMaxLength: 2,
+          isNullable: 'NO',
+        },
+        state_province: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 25,
+          isNullable: 'YES',
+        },
+        city: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 30,
+          isNullable: 'NO',
+        },
+        postal_code: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 12,
+          isNullable: 'YES',
+        },
+        street_address: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 40,
+          isNullable: 'YES',
+        },
+      },
+    },
+    departments: {
+      primaryKey: 'department_id',
+      foreignKeys: {
+        location_id: {
+          referenceTable: 'locations',
+          referenceKey: 'location_id',
+        },
+      },
+      referencedBy: {
+        employees: 'department_id',
+      },
+      columns: {
+        location_id: {
+          dataType: 'integer',
+          columnDefault: null,
+          charMaxLength: null,
+          isNullable: 'YES',
+        },
+        department_id: {
+          dataType: 'integer',
+          columnDefault: "nextval('departments_department_id_seq'::regclass)",
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+        department_name: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 30,
+          isNullable: 'NO',
+        },
+      },
+    },
+    jobs: {
+      primaryKey: 'job_id',
+      foreignKeys: null,
+      referencedBy: {
+        employees: 'job_id',
+      },
+      columns: {
+        max_salary: {
+          dataType: 'numeric',
+          columnDefault: null,
+          charMaxLength: null,
+          isNullable: 'YES',
+        },
+        job_title: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 35,
+          isNullable: 'NO',
+        },
+        min_salary: {
+          dataType: 'numeric',
+          columnDefault: null,
+          charMaxLength: null,
+          isNullable: 'YES',
+        },
+        job_id: {
+          dataType: 'integer',
+          columnDefault: "nextval('jobs_job_id_seq'::regclass)",
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+      },
+    },
+    employees: {
+      primaryKey: 'employee_id',
+      foreignKeys: {
+        job_id: {
+          referenceTable: 'jobs',
+          referenceKey: 'job_id',
+        },
+        department_id: {
+          referenceTable: 'departments',
+          referenceKey: 'department_id',
+        },
+        manager_id: {
+          referenceTable: 'employees',
+          referenceKey: 'employee_id',
+        },
+      },
+      referencedBy: {
+        employees: 'manager_id',
+        dependents: 'employee_id',
+      },
+      columns: {
+        email: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 100,
+          isNullable: 'NO',
+        },
+        hire_date: {
+          dataType: 'date',
+          columnDefault: null,
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+        job_id: {
+          dataType: 'integer',
+          columnDefault: null,
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+        salary: {
+          dataType: 'numeric',
+          columnDefault: null,
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+        employee_id: {
+          dataType: 'integer',
+          columnDefault: "nextval('employees_employee_id_seq'::regclass)",
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+        department_id: {
+          dataType: 'integer',
+          columnDefault: null,
+          charMaxLength: null,
+          isNullable: 'YES',
+        },
+        manager_id: {
+          dataType: 'integer',
+          columnDefault: null,
+          charMaxLength: null,
+          isNullable: 'YES',
+        },
+        first_name: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 20,
+          isNullable: 'YES',
+        },
+        last_name: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 25,
+          isNullable: 'NO',
+        },
+        phone_number: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 20,
+          isNullable: 'YES',
+        },
+      },
+    },
+    dependents: {
+      primaryKey: 'dependent_id',
+      foreignKeys: {
+        employee_id: {
+          referenceTable: 'employees',
+          referenceKey: 'employee_id',
+        },
+      },
+      referencedBy: null,
+      columns: {
+        first_name: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 50,
+          isNullable: 'NO',
+        },
+        dependent_id: {
+          dataType: 'integer',
+          columnDefault: "nextval('dependents_dependent_id_seq'::regclass)",
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+        relationship: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 25,
+          isNullable: 'NO',
+        },
+        last_name: {
+          dataType: 'character varying',
+          columnDefault: null,
+          charMaxLength: 50,
+          isNullable: 'NO',
+        },
+        employee_id: {
+          dataType: 'integer',
+          columnDefault: null,
+          charMaxLength: null,
+          isNullable: 'NO',
+        },
+      },
+    },
+  },
+};
+
 // module.exports = { GQLServerCode, GQLClientQueriesCode, GQLClientMutationsCode };
