@@ -32,7 +32,7 @@ function Demo() {
   const fetchData = (uri, endpoint) => {
     dispatch(setShowLoader(true));
 
-    fetch(`http://localhost:8080/${endpoint}`, {
+    fetch(`https://serene-cove-74017.herokuapp.com/${endpoint}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ link: uri }),
