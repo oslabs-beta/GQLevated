@@ -16,6 +16,7 @@ describe('Route integration', function(){
             });
         });
 
+
         describe('POST', () => {
             it('responds with 200 status and text/html content type', function(done){
                 request(server)
@@ -36,6 +37,17 @@ describe('Route integration', function(){
             });
         });
 
+    })
+    describe('/', () => {
+        describe('GET', () => {
+            it('responds with 404 not found', function(done){
+                request(server)
+                .get('/fake')
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(404, done);
+            });
+        });
     })
 });
 
