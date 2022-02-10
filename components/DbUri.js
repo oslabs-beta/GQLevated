@@ -31,21 +31,36 @@ const fadeInRight = {
   },
 };
 
-function DbUri({ hidePanel, fetchData, setLoader }) {
+function DbUri({ hidePanel, fetchData }) {
   const uriField = useRef();
   const dispatch = useDispatch();
   const isError = useSelector((state) => state.demo.isError);
   const errorMsg = useSelector((state) => state.demo.errorMsg);
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     const URILink = uriField.current.value;
     e.preventDefault();
-    if (URILink.length > 0) {
+
+    const fetchEndpoint = await checkEndpoint(URILink);
+    if (URILink.length > 0 && fetchEndpoint.length > 0) {
       const encryptedURL = CryptoJS.AES.encrypt(URILink, secretKey).toString(); //Encrypting user-inputted DB URI string
-      fetchData(encryptedURL);
+      fetchData(encryptedURL, fetchEndpoint);
     } else {
-      dispatch(setErrorMsg('Please Enter a URI string'));
+      dispatch(setErrorMsg('Please enter a valid PostgreSQL or MongoDB URI'));
       dispatch(setIsError(true));
+    }
+  };
+
+  const checkEndpoint = async (URILink) => {
+    const mongodbURI = 'convert-mongo-db';
+    const sqlURI = 'convert-sql-db';
+
+    if (URILink.includes('postgres://')) {
+      return sqlURI;
+    } else if (URILink.includes('mongodb+srv://')) {
+      return mongodbURI;
+    } else {
+      return '';
     }
   };
 
@@ -59,7 +74,7 @@ function DbUri({ hidePanel, fetchData, setLoader }) {
             clearable
             bordered
             width='20rem'
-            labelPlaceholder='PostgreSQL URI'
+            labelPlaceholder='PostgreSQL or MongoDB URI'
             initialValue=''
             ref={uriField}
             onKeyDown={(e) => {
@@ -80,6 +95,7 @@ function DbUri({ hidePanel, fetchData, setLoader }) {
               dispatch(setQueries(''));
               dispatch(showDemo(false));
               dispatch(setIsError(false));
+              dispatch(setErrorMsg(''));
               handleClick(e);
             }}
           >
