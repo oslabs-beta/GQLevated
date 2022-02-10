@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(compression({ filter: shouldCompress }));
 
-app.use('/pages/api', router);
+app.use('/api', router);
 
 /* UNKNOWN ROUTE */
 app.use('*', (req, res) => res.status(404).send('This Page Does Not Exist'));
