@@ -30,7 +30,8 @@ function Demo() {
   }, []);
 
   const fetchData = (uri, endpoint) => {
-    // fetch('http://localhost:8080/convert-mongo-db', {
+    dispatch(setShowLoader(true));
+
     fetch(`http://localhost:8080/${endpoint}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -39,13 +40,15 @@ function Demo() {
       .then((res) => res.json())
       .then(async (data) => {
         if (data.err) {
-          dispatch(setIsError(true));
-          dispatch(setErrorMsg(data.err));
+          setTimeout(() => {
+            dispatch(setShowLoader(false));
+            dispatch(setIsError(true));
+            dispatch(setErrorMsg(data.err));
+          }, 550);
         } else {
-          console.log('data', data);
           setFlowModalData(null);
           setFlowModalData(data.SQLSchema);
-          dispatch(setShowLoader(true));
+          // dispatch(setShowLoader(true));
           setTimeout(() => {
             dispatch(setShowLoader(false));
             dispatch(setQueries(data));
