@@ -17,7 +17,11 @@ function GitHubStar() {
             <Image src={GraphqlLogo} width={50} height={50} alt='logo-gif' />
           </li>
         </a>
-        <a href='https://medium/' target='_blank' rel='noreferrer noopener'>
+        <a
+          href='https://medium.com/@gqlevated/gqlevated-elevate-your-project-with-seamless-graphql-integration-bec66140e7fc'
+          target='_blank'
+          rel='noreferrer noopener'
+        >
           <li className={styles.listitem}>
             <Image src={MediumLogo} width={45} height={45} alt='logo-gif' />
           </li>

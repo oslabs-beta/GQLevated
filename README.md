@@ -51,7 +51,7 @@
 
 ## About GQLevated
 
-[GQLevated](https://GQLevated.dev) is an open source GraphQL prototyping tool. Our Web Hosted Development Tool supplies users with customized, production-ready GraphQL code including server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. This allows developers to spend more time solving problems and less time tediously writing GraphQL code, thus ELEVATING the project as a whole. Here is a [medium]() article describing the inspiration behind GQLevated.
+[GQLevated](https://GQLevated.dev) is an open source GraphQL prototyping tool. Our Web Hosted Development Tool supplies users with customized, production-ready GraphQL code including server-side Types, Root Queries and Mutations as well as client-side Queries and Mutations. This allows developers to spend more time solving problems and less time tediously writing GraphQL code, thus ELEVATING the project as a whole. Here is a [medium](https://medium.com/@gqlevated/gqlevated-elevate-your-project-with-seamless-graphql-integration-bec66140e7fc) article describing the inspiration behind GQLevated.
 
 And it’s free to use for everyone - no need to create an account!
 
@@ -185,6 +185,7 @@ Required software for setting up this application:
    ```sh
    npm run dev
    ```
+
 4. Unit testing can be run by the following command:
 
    ```sh
