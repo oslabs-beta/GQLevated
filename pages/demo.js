@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Head from 'next/head';
+import PreviewImage from '../public/GQLevatedWordMark.png'
+
 
 import { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowDBInfo } from '../features/demoSlice';
 import DbUri from '../components/DbUri';
@@ -83,6 +85,7 @@ function Demo() {
       <Head>
         <title>GQLevated</title>
         <meta property='og:title' content='GQLevated' key='title' />
+        <meta property='og:image' content={PreviewImage} key='ogimage' />
       </Head>
       {showURIPanel ? (
         <DbUri fetchData={fetchData} setLoader={setShowLoader} dbData={dbData} setDbData={setDbData} hidePanel={() => setShowURIPanel(false)} />
