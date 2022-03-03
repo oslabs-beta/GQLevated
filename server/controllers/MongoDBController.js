@@ -38,7 +38,7 @@ Controller.connectToMongo = async (req, res, next) => {
       log: `Error caught in server middleware @ connectToMongo: ${error}`,
       status: 400,
       message: {
-        err: 'Unable to connect to MongoDB Database Please enter a valid Connection String / Make sure your IP Adress has access',
+        err: 'Unable to connect to MongoDB Database Please enter a valid Connection String / Make sure ALL IP Addresses have access',
       },
     };
     return next(errObj);
