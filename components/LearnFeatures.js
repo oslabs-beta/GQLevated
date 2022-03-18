@@ -18,7 +18,10 @@ function LearnFeatures() {
       'Export your GraphQL Code',
       'In addition to copying and pasting the newly generated GraphQL code straight from the browser display, users also have the option to export their customized GraphQL code as individual JavaScript files. Simply click on the ‘Export Code‘ button in the corresponding container of the code that you wish to download.',
     ],
-    ['Visualize your GraphQL Schema', 'Visualize and interact with your database relationships!'],
+    [
+      'Visualize your GraphQL Schema', 
+      'Visualize and interact with your database relationships!',
+    ],
   ];
 
   const introFeatures = [];
@@ -35,7 +38,7 @@ function LearnFeatures() {
         <h1 className={styles.headers}>What can GQLevated do for you?</h1>
         <br></br>
         <p className={styles.paragraphs}>
-          <div className={styles.textPrompt}>
+          <div className={styles.text}>
             Our Web Development Tool supplies users with customized, production-ready GraphQL code including server-side Types, Root Queries and Mutations as
             well as client-side Queries and Mutations. This allows developers to spend more time solving problems and less time tediously writing GraphQL code,
             thus ELEVATING the project as a whole.

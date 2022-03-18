@@ -21,9 +21,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
-  height: 550px;
+  height: 44rem;
   margin-top: 5rem;
-  margin-bottom: 10rem;
+  margin-bottom: 6rem;
   color: white;
 }
 
@@ -87,4 +87,84 @@
 
 .textPrompt {
   width: 80rem;
+}
+
+@media only screen 
+  and (max-width: 1100px)
+  {
+  .features {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .overview p {
+    font-size: 1.25rem;
+  }
+  .overview h1 {
+    font-size: 2.25rem;
+  }
+
+  .allFeatures {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .featureTitle {
+    font-size: 2.25rem;
+  }
+  
+  .featureDescription {
+    font-size: 1.25rem;
+
+  }
+  .featureWords {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  
+}
+@media only screen 
+  and (max-width: 420px)
+  {
+  .features {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 35rem;
+  
+  }
+  .overview p {
+    font-size: 1rem;
+  }
+  .overview h1 {
+    font-size: 1.5rem;
+  }
+
+  .allFeatures {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .featureTitle {
+    font-size: 1.5rem;
+  }
+  
+  .featureDescription {
+    font-size: 1rem;
+
+
+  }
+  .featureWords {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  
 }

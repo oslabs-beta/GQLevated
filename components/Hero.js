@@ -23,7 +23,7 @@ function Hero() {
   return (
     <div className={styles.hero}>
       <motion.div variants={rotate} animate='initial'>
-        <Image src={GQLLogo} width={300} height={300} alt='logo-gif' />
+        <Image src={GQLLogo} className={styles.scaleDown} width={300} height={300} alt='logo-gif' />
       </motion.div>
       <Spacer y={4} />
       <h1>GQLevated</h1>
