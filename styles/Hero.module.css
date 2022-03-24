@@ -13,7 +13,14 @@
 
 .hero h1 {
   font-size: 7rem;
+  max-width: 100%;
+  text-align: center;
   color: var(--primary-color);
+}
+
+.hero h2 {
+  font-size: 2rem;
+  text-align: center;
 }
 
 .hero button {
@@ -25,4 +32,30 @@
   transition: left 0.5s ease-in-out;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #aaa9a9;
+}
+
+@media only screen and (max-width: 820px) {
+  .hero{
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 4rem;
+  }
+  
+  .scaleDown {
+    transform: scale(0.6);
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .scaleDown {
+    transform: scale(0.5);
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
 }
