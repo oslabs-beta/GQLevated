@@ -1,14 +1,14 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
-import styles from '../styles/HiddenURIPanel.module.css';
+import styles from '../styles/HiddenURIPanel.module.css'
 
-const easing = [0.83, 0, 0.17, 1];
+const easing = [0.83, 0, 0.17, 1]
 
 const fadeInLeft = {
   initial: {
     x: [0, 10, 0],
-    opacity: 1,
+    opacity: 1
   },
   animate: {
     x: 0,
@@ -16,31 +16,31 @@ const fadeInLeft = {
     transition: {
       delay: 10,
       type: 'bounce',
-      duration: 1.0,
-    },
-  },
-};
+      duration: 1.0
+    }
+  }
+}
 
 function HiddenURIPanel({ showPanel }) {
-  const [showHoverPanel, setShowHoverPanel] = useState(false);
-  const panelRef = useRef();
+  const [showHoverPanel, setShowHoverPanel] = useState(false)
+  const panelRef = useRef()
 
   useEffect(() => {
     if (showHoverPanel) {
-      panelRef.current.style.boxShadow = '0 0 10px #cbcdd0';
-      panelRef.current.style.backgroundColor = 'var(--secondary-color)';
-      panelRef.current.style.opacity = '0.5';
+      panelRef.current.style.boxShadow = '0 0 10px #cbcdd0'
+      panelRef.current.style.backgroundColor = 'var(--secondary-color)'
+      panelRef.current.style.opacity = '0.5'
     } else {
-      panelRef.current.style.boxShadow = '';
-      panelRef.current.style.backgroundColor = '';
+      panelRef.current.style.boxShadow = ''
+      panelRef.current.style.backgroundColor = ''
     }
-  }, [showHoverPanel]);
+  }, [showHoverPanel])
 
   const bounceTransition = {
     duration: 0.4,
     yoyo: Infinity,
-    ease: 'easeOut',
-  };
+    ease: 'easeOut'
+  }
 
   return (
     <motion.div
@@ -51,9 +51,8 @@ function HiddenURIPanel({ showPanel }) {
       ref={panelRef}
       onClick={() => showPanel()}
       onMouseOver={() => setShowHoverPanel(true)}
-      onMouseLeave={() => setShowHoverPanel(false)}
-    ></motion.div>
-  );
+      onMouseLeave={() => setShowHoverPanel(false)}></motion.div>
+  )
 }
 
-export default HiddenURIPanel;
+export default HiddenURIPanel

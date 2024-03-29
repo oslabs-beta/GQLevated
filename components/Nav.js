@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from 'next/link'
+import React from 'react'
 
-import styles from '../styles/Nav.module.css';
-import GitHubStar from './GitHubStar';
-import GQLevated from './GQLevated.js';
+import styles from '../styles/Nav.module.css'
+import GitHubStar from './GitHubStar'
+import GQLevated from './GQLevated.js'
 
 function Nav() {
   return (
@@ -29,7 +29,7 @@ function Nav() {
       <GQLevated />
       <GitHubStar />
     </div>
-  );
+  )
 }
 
-export default Nav;
+export default Nav

@@ -1,23 +1,23 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { Spacer } from '@nextui-org/react';
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { Spacer } from '@nextui-org/react'
 
-import styles from '../styles/Hero.module.css';
-import GQLLogo from '../public/LOGO.svg';
+import styles from '../styles/Hero.module.css'
+import GQLLogo from '../public/LOGO.svg'
 
-const easing = [0.17, 0.67, 0.84, 0.66];
+const easing = [0.17, 0.67, 0.84, 0.66]
 
 const rotate = {
   initial: {
     rotate: [0, 750, 720],
     transition: {
       linear: easing,
-      duration: 2.2,
-    },
-  },
-};
+      duration: 2.2
+    }
+  }
+}
 
 function Hero() {
   return (
@@ -34,7 +34,7 @@ function Hero() {
         <button className='hvr-wobble-vertical'> Learn More </button>
       </Link>
     </div>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

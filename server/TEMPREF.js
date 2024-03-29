@@ -22,12 +22,12 @@ databases = {
             relation: {
               tableIndex: -1,
               fieldIndex: -1,
-              refType: '',
+              refType: ''
             },
             refByIndex: 0,
             refBy: {},
             tableNum: 0,
-            fieldNum: 0,
+            fieldNum: 0
           },
           1: {
             name: 'Name',
@@ -42,11 +42,11 @@ databases = {
             relation: {
               tableIndex: -1,
               fieldIndex: -1,
-              refType: '',
+              refType: ''
             },
             refBy: {},
             tableNum: 0,
-            fieldNum: 1,
+            fieldNum: 1
           },
           2: {
             name: 'Age',
@@ -61,22 +61,22 @@ databases = {
             relation: {
               tableIndex: -1,
               fieldIndex: -1,
-              refType: '',
+              refType: ''
             },
             refBy: {},
             tableNum: 0,
-            fieldNum: 2,
-          },
+            fieldNum: 2
+          }
         },
         fieldsIndex: 3,
-        tableID: 0,
-      },
+        tableID: 0
+      }
     },
     selectedTable: {
       type: '',
       fields: {},
       fieldsIndex: 1,
-      tableID: -1,
+      tableID: -1
     },
     selectedField: {
       name: '',
@@ -91,13 +91,11 @@ databases = {
       relation: {
         tableIndex: -1,
         fieldIndex: -1,
-        refType: '',
+        refType: ''
       },
       refBy: {},
       tableNum: 0,
-      fieldNum: -1,
-    },
-  },
-};
-
-
+      fieldNum: -1
+    }
+  }
+}

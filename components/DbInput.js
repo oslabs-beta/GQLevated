@@ -1,45 +1,52 @@
-import React, { useRef } from 'react';
-import { Input, Spacer, Button } from '@nextui-org/react';
-import { useDispatch, useSelector } from 'react-redux';
-import CryptoJS from 'crypto-js';
+import React, { useRef } from 'react'
+import { Input, Spacer, Button } from '@nextui-org/react'
+import { useDispatch, useSelector } from 'react-redux'
+import CryptoJS from 'crypto-js'
 
-import { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowDBInfo } from '../features/demoSlice';
-import styles from '../styles/DbUri.module.css';
-import secretKey from '../server/secretKey';
+import {
+  setQueries,
+  showDemo,
+  setIsError,
+  setErrorMsg,
+  setShowLoader,
+  setShowDBInfo
+} from '../features/demoSlice'
+import styles from '../styles/DbUri.module.css'
+import secretKey from '../server/secretKey'
 
 function DbInput({ fetchData }) {
-  const uriField = useRef();
-  const isError = useSelector((state) => state.demo.isError);
-  const errorMsg = useSelector((state) => state.demo.errorMsg);
-  const dispatch = useDispatch();
+  const uriField = useRef()
+  const isError = useSelector((state) => state.demo.isError)
+  const errorMsg = useSelector((state) => state.demo.errorMsg)
+  const dispatch = useDispatch()
 
   const handleClick = async (e) => {
-    dispatch(showDemo(false));
-    const URILink = uriField.current.value;
-    e.preventDefault();
+    dispatch(showDemo(false))
+    const URILink = uriField.current.value
+    e.preventDefault()
 
-    const fetchEndpoint = await checkEndpoint(URILink);
+    const fetchEndpoint = await checkEndpoint(URILink)
     if (URILink.length > 0 && fetchEndpoint.length > 0) {
-      const encryptedURL = CryptoJS.AES.encrypt(URILink, secretKey).toString(); //Encrypting user-inputted DB URI string
-      fetchData(encryptedURL, fetchEndpoint);
+      const encryptedURL = CryptoJS.AES.encrypt(URILink, secretKey).toString() //Encrypting user-inputted DB URI string
+      fetchData(encryptedURL, fetchEndpoint)
     } else {
-      dispatch(setErrorMsg('Please enter a valid PostgreSQL or MongoDB URI'));
-      dispatch(setIsError(true));
+      dispatch(setErrorMsg('Please enter a valid PostgreSQL or MongoDB URI'))
+      dispatch(setIsError(true))
     }
-  };
+  }
 
   const checkEndpoint = async (URILink) => {
-    const mongodbURI = 'convert-mongo-db';
-    const sqlURI = 'convert-sql-db';
+    const mongodbURI = 'convert-mongo-db'
+    const sqlURI = 'convert-sql-db'
 
     if (URILink.includes('postgres://')) {
-      return sqlURI;
+      return sqlURI
     } else if (URILink.includes('mongodb+srv://')) {
-      return mongodbURI;
+      return mongodbURI
     } else {
-      return '';
+      return ''
     }
-  };
+  }
 
   return (
     <>
@@ -54,7 +61,7 @@ function DbInput({ fetchData }) {
           initialValue=''
           ref={uriField}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') handleClick(e);
+            if (e.key === 'Enter') handleClick(e)
           }}
         />
         <Spacer y={1.5} />
@@ -68,12 +75,11 @@ function DbInput({ fetchData }) {
           size='sm'
           css={{ px: '$14' }}
           onClick={(e) => {
-            dispatch(setQueries(''));
-            dispatch(setIsError(false));
-            dispatch(setErrorMsg(''));
-            handleClick(e);
-          }}
-        >
+            dispatch(setQueries(''))
+            dispatch(setIsError(false))
+            dispatch(setErrorMsg(''))
+            handleClick(e)
+          }}>
           Generate
         </Button>
       </div>
@@ -89,22 +95,21 @@ function DbInput({ fetchData }) {
           size='sm'
           css={{ px: '$10' }}
           onClick={() => {
-            dispatch(setIsError(false));
-            dispatch(showDemo(false)); //update showDemo state in redux
-            dispatch(setQueries(''));
-            dispatch(setShowLoader(true));
+            dispatch(setIsError(false))
+            dispatch(showDemo(false)) //update showDemo state in redux
+            dispatch(setQueries(''))
+            dispatch(setShowLoader(true))
             setTimeout(() => {
-              dispatch(setShowLoader(false));
-              dispatch(showDemo(true)); //update showDemo state in redux
-              dispatch(setShowDBInfo(true));
-            }, 700);
-          }}
-        >
+              dispatch(setShowLoader(false))
+              dispatch(showDemo(true)) //update showDemo state in redux
+              dispatch(setShowDBInfo(true))
+            }, 700)
+          }}>
           Sample Database
         </Button>
       </div>
     </>
-  );
+  )
 }
 
-export default DbInput;
+export default DbInput

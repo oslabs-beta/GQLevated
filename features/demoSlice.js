@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialStateValue = {
   queries: undefined,
@@ -7,8 +7,8 @@ const initialStateValue = {
   errorMsg: '',
   showLoader: false,
   showFlowModal: false,
-  showDBInfo: false,
-};
+  showDBInfo: false
+}
 
 //REDUCERS
 export const demoSlice = createSlice({
@@ -16,29 +16,38 @@ export const demoSlice = createSlice({
   initialState: initialStateValue,
   reducers: {
     setQueries: (state, action) => {
-      state.queries = action.payload;
+      state.queries = action.payload
     },
     showDemo: (state, action) => {
-      state.showDemo = action.payload;
+      state.showDemo = action.payload
     },
     setIsError: (state, action) => {
-      state.isError = action.payload;
+      state.isError = action.payload
     },
     setErrorMsg: (state, action) => {
-      state.errorMsg = action.payload;
+      state.errorMsg = action.payload
     },
     setShowLoader: (state, action) => {
-      state.showLoader = action.payload;
+      state.showLoader = action.payload
     },
     setShowFlowModal: (state, action) => {
-      state.showFlowModal = action.payload;
+      state.showFlowModal = action.payload
     },
     setShowDBInfo: (state, action) => {
-      state.showDBInfo = action.payload;
-    },
-  },
-});
+      state.showDBInfo = action.payload
+    }
+  }
+})
 
-export const { setQueries, showDemo, setIsError, setErrorMsg, setShowLoader, setShowFlowModal, setFlowElements, setShowDBInfo } = demoSlice.actions;
+export const {
+  setQueries,
+  showDemo,
+  setIsError,
+  setErrorMsg,
+  setShowLoader,
+  setShowFlowModal,
+  setFlowElements,
+  setShowDBInfo
+} = demoSlice.actions
 
-export default demoSlice.reducer;
+export default demoSlice.reducer

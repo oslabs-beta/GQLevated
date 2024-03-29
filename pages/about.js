@@ -1,9 +1,8 @@
-import Head from 'next/head';
-import React from 'react';
+import Head from 'next/head'
+import React from 'react'
 import PreviewImage from '../public/GQLevatedWordMark.png'
 
-
-import Team from '../components/Team';
+import Team from '../components/Team'
 
 function About() {
   return (
@@ -15,7 +14,7 @@ function About() {
       </Head>
       <Team />
     </div>
-  );
+  )
 }
 
-export default About;
+export default About

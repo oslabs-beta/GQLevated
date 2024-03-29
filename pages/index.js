@@ -1,8 +1,8 @@
-import Head from 'next/head';
+import Head from 'next/head'
 import PreviewImage from '../public/GQLevatedWordMark.png'
-import styles from '../styles/HomeContent.module.css';
-import Hero from '../components/Hero';
-import LearnFeatures from '../components/LearnFeatures';
+import styles from '../styles/HomeContent.module.css'
+import Hero from '../components/Hero'
+import LearnFeatures from '../components/LearnFeatures'
 
 export default function Home() {
   return (
@@ -17,5 +17,5 @@ export default function Home() {
         <LearnFeatures />
       </div>
     </>
-  );
+  )
 }

@@ -1,50 +1,50 @@
-import React from 'react';
-import { saveAs } from 'file-saver';
-import { useSelector } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { Button } from '@nextui-org/react';
+import React from 'react'
+import { saveAs } from 'file-saver'
+import { useSelector } from 'react-redux'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { Button } from '@nextui-org/react'
 
-import qtCreator from '../node_modules/react-syntax-highlighter/dist/esm/styles/hljs/qtcreator_dark';
-import styles from '../styles/CodeBoxContainer.module.css';
-import { SampleGQLServerCode, SampleGQLClientQueriesCode, SampleGQLClientMutationsCode } from '../server/sampleDB';
+import qtCreator from '../node_modules/react-syntax-highlighter/dist/esm/styles/hljs/qtcreator_dark'
+import styles from '../styles/CodeBoxContainer.module.css'
+import { SampleGQLServerCode, SampleGQLClientQueriesCode, SampleGQLClientMutationsCode } from '../server/sampleDB'
 
 function CodeBoxContainer() {
-  const showDemo = useSelector((state) => state.demo.showDemo);
-  const data = useSelector((state) => state.demo.queries);
+  const showDemo = useSelector((state) => state.demo.showDemo)
+  const data = useSelector((state) => state.demo.queries)
 
-  const uriDataGQLServerCode = data ? data.GQLServerCode : '';
-  const uriDataGQLClientMutationsCode = data ? data.GQLClientMutationsCode : '';
-  const uriDataGQLClientQueriesCode = data ? data.GQLClientQueriesCode : '';
+  const uriDataGQLServerCode = data ? data.GQLServerCode : ''
+  const uriDataGQLClientMutationsCode = data ? data.GQLClientMutationsCode : ''
+  const uriDataGQLClientQueriesCode = data ? data.GQLClientQueriesCode : ''
 
   /* EXPORT GQL SERVER CODE */
   const exportGQLServerCode = () => {
     if (showDemo) {
-      saveAs(new File([`${SampleGQLServerCode}`], 'GQLServerCode.js', { type: 'text/plain;charset=utf-8' }));
+      saveAs(new File([`${SampleGQLServerCode}`], 'GQLServerCode.js', { type: 'text/plain;charset=utf-8' }))
     }
     if (!showDemo && uriDataGQLServerCode !== '') {
-      saveAs(new File([`${uriDataGQLServerCode}`], 'GQLServerCode.js', { type: 'text/plain;charset=utf-8' }));
+      saveAs(new File([`${uriDataGQLServerCode}`], 'GQLServerCode.js', { type: 'text/plain;charset=utf-8' }))
     }
-  };
+  }
 
   /* EXPORT GQL CLIENT MUTATIONS CODE */
   const exportGQLClientMutationsCode = () => {
     if (showDemo) {
-      saveAs(new File([`${SampleGQLClientMutationsCode}`], 'GQLClientMutationsCode.js', { type: 'text/plain;charset=utf-8' }));
+      saveAs(new File([`${SampleGQLClientMutationsCode}`], 'GQLClientMutationsCode.js', { type: 'text/plain;charset=utf-8' }))
     }
     if (!showDemo && uriDataGQLClientMutationsCode !== '') {
-      saveAs(new File([`${uriDataGQLClientMutationsCode}`], 'GQLClientMutationsCode.js', { type: 'text/plain;charset=utf-8' }));
+      saveAs(new File([`${uriDataGQLClientMutationsCode}`], 'GQLClientMutationsCode.js', { type: 'text/plain;charset=utf-8' }))
     }
-  };
+  }
 
   /* EXPORT GQL CLIENT QUERIES CODE */
   const exportGQLClientQueriesCode = () => {
     if (showDemo) {
-      saveAs(new File([`${SampleGQLClientQueriesCode}`], 'GQLClientQueriesCode.js', { type: 'text/plain;charset=utf-8' }));
+      saveAs(new File([`${SampleGQLClientQueriesCode}`], 'GQLClientQueriesCode.js', { type: 'text/plain;charset=utf-8' }))
     }
     if (!showDemo && uriDataGQLClientQueriesCode !== '') {
-      saveAs(new File([`${uriDataGQLClientQueriesCode}`], 'GQLClientQueriesCode.js', { type: 'text/plain;charset=utf-8' }));
+      saveAs(new File([`${uriDataGQLClientQueriesCode}`], 'GQLClientQueriesCode.js', { type: 'text/plain;charset=utf-8' }))
     }
-  };
+  }
 
   return (
     <div className={styles.codebox}>
@@ -60,7 +60,7 @@ function CodeBoxContainer() {
               size='sm'
               css={{ px: '$4', height: '$10' }}
               onClick={() => {
-                exportGQLClientMutationsCode();
+                exportGQLClientMutationsCode()
               }}
             >
               Export Code
@@ -81,7 +81,7 @@ function CodeBoxContainer() {
               size='sm'
               css={{ px: '$4', height: '$10' }}
               onClick={() => {
-                exportGQLClientQueriesCode();
+                exportGQLClientQueriesCode()
               }}
             >
               Export Code
@@ -103,7 +103,7 @@ function CodeBoxContainer() {
             size='sm'
             css={{ px: '$4', height: '$10' }}
             onClick={() => {
-              exportGQLServerCode();
+              exportGQLServerCode()
             }}
           >
             Export Code
@@ -114,7 +114,7 @@ function CodeBoxContainer() {
         </SyntaxHighlighter>
       </div>
     </div>
-  );
+  )
 }
 
-export default CodeBoxContainer;
+export default CodeBoxContainer

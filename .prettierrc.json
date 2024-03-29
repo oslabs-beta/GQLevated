@@ -1,13 +1,15 @@
 {
-  "trailingComma": "es5",
+  "trailingComma": "none",
   "tabWidth": 2,
-  "semi": true,
+  "semi": false,
   "singleQuote": true,
-	"printWidth": 160,
+  "printWidth": 100,
 	"jsxSingleQuote": true,
 	"useTabs": false,
 	"useEditorConfig": true,
 	"htmlWhitespaceSensitivity": "css",
+  "bracketSameLine": true,
 	"bracketSpacing": true,
-	"prettier.arrowParens": "always"
+	"arrowParens": "always",
+  "quoteProps": "as-needed"
 }

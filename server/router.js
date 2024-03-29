@@ -1,16 +1,23 @@
-const express = require('express');
-const router = express.Router();
-const { decryptURI } = require('./controllers/CryptoJSController');
+const express = require('express')
+const router = express.Router()
+const { decryptURI } = require('./controllers/CryptoJSController')
 // const { decryptURI } = require('./controllers/CryptoJSController.ts');
 
-const { getSQLTables, getSQLDBname, prepForGQL } = require('./controllers/SQLController');
-const { connectToMongo, getMongoDocuments, MongoPrepForGQL } = require('./controllers/MongoDBController');
-const { convertToGQLServerCode } = require('./controllers/GQLServerController');
-const { convertToGQLClientQueriesCode, convertToGQLClientMutationsCode } = require('./controllers/GQLClientController');
+const { getSQLTables, getSQLDBname, prepForGQL } = require('./controllers/SQLController')
+const {
+  connectToMongo,
+  getMongoDocuments,
+  MongoPrepForGQL
+} = require('./controllers/MongoDBController')
+const { convertToGQLServerCode } = require('./controllers/GQLServerController')
+const {
+  convertToGQLClientQueriesCode,
+  convertToGQLClientMutationsCode
+} = require('./controllers/GQLClientController')
 
 router.get('/', (req, res) => {
-  res.status(200).send('HELLO FROM THE BACKEND!');
-});
+  res.status(200).send('HELLO FROM THE BACKEND!')
+})
 
 /* ROUTE TO GET DEMO POSTGRESQL DB AND CONVERT TO GRAPHQL SERVER, CLIENT QUERIES AND MUTATIONS CODE */
 router.get(
@@ -28,11 +35,11 @@ router.get(
       SQLSchema: res.locals.SQLSchema,
       GQLServerCode: res.locals.GQLServerCode,
       GQLClientQueriesCode: res.locals.GQLClientQueriesCode,
-      GQLClientMutationsCode: res.locals.GQLClientMutationsCode,
-    };
-    res.status(200).json(GQLCode);
+      GQLClientMutationsCode: res.locals.GQLClientMutationsCode
+    }
+    res.status(200).json(GQLCode)
   }
-);
+)
 
 /* ROUTE TO GET USER POSTGRESQL DB AND CONVERT TO GRAPHQL SERVER, CLIENT QUERIES AND MUTATIONS CODE */
 router.post(
@@ -50,11 +57,11 @@ router.post(
       SQLSchema: res.locals.SQLSchema,
       GQLServerCode: res.locals.GQLServerCode,
       GQLClientQueriesCode: res.locals.GQLClientQueriesCode,
-      GQLClientMutationsCode: res.locals.GQLClientMutationsCode,
-    };
-    res.status(200).json(GQLCode);
+      GQLClientMutationsCode: res.locals.GQLClientMutationsCode
+    }
+    res.status(200).json(GQLCode)
   }
-);
+)
 
 /* ROUTE TO GET USER MONGO DB AND CONVERT TO GRAPHQL SERVER, CLIENT QUERIES AND MUTATIONS CODE */
 router.post(
@@ -72,10 +79,10 @@ router.post(
       MongoSchema: res.locals.MongoSchema,
       GQLServerCode: res.locals.GQLServerCode,
       GQLClientQueriesCode: res.locals.GQLClientQueriesCode,
-      GQLClientMutationsCode: res.locals.GQLClientMutationsCode,
-    };
-    res.status(200).json(GQLCode);
+      GQLClientMutationsCode: res.locals.GQLClientMutationsCode
+    }
+    res.status(200).json(GQLCode)
   }
-);
+)
 
-module.exports = router;
+module.exports = router

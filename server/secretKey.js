@@ -1,3 +1,3 @@
-const secretKey = 'TeamGQLevatedRules';
+const secretKey = 'TeamGQLevatedRules'
 
-module.exports = secretKey;
+module.exports = secretKey

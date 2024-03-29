@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import Nav from '../components/Nav';
-import styles from '../styles/Layout.module.css';
+import Nav from '../components/Nav'
+import styles from '../styles/Layout.module.css'
 
 function Layout({ children }) {
   return (
@@ -9,7 +9,7 @@ function Layout({ children }) {
       <Nav />
       <main className={styles.main}>{children}</main>
     </>
-  );
+  )
 }
 
-export default Layout;
+export default Layout
